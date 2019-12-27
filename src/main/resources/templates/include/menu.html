@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <meta charset="UTF-8">
+    <title>菜单栏</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/demo/css/bootstrap.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/demo/css/index.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/demo/css/config.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/demo/css/font-awesome.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/demo/css/jquery.pagination.css}"/>
+    <script type="text/javascript" th:src="@{/demo/js/jquery-3.3.1.min.js}"></script>
+    <script type="text/javascript" th:src="@{/demo/js/bootstrap.js}"></script>
+    <script type="text/javascript" th:src="@{/demo/js/jquery.slimscroll.min.js}"></script>
+    <script type="text/javascript" th:src="@{/demo/js/jquery.pagination.min.js}"></script>
+    <script type="text/javascript" th:src="@{/demo//layer/layer.js}"></script>
+    <script type="text/javascript" th:src="@{/demo/js/bootstrapValidator.js}"></script>
+</head>
+<body>
+            <!-- 页面主体 -->
+            <div class="dh mainbox"  th:fragment = "menu">
+                <!-- 左边菜单 -->
+                <div class="navleft leftnav-bgc">
+                    <dl class="list_dl">
+                        <dt class="list_dt">
+                            <span class="_after"></span>
+                            <p><a class="list_a" href="/login/toIndex">首页</a></p>
+                        </dt>
+                        <dt class="list_dt">
+                            <span class="_after"></span>
+                            <p><a class="list_a" href="/personal/toPersonalCenter">个人中心</a></p>
+                        </dt>
+                        <div>
+                            <dt class="list_dt">
+                                <span class="_after"></span>
+                                <p>基础管理</p>
+                                <i class="list_dt_icon"></i>
+                            </dt>
+                            <dd class="list_dd">
+                                <ul>
+                                    <shiro:hasPermission name="用户管理">
+                                        <li class="list_li">
+                                            <a class="list_a" href="/user/toUserManagement">用户管理</a>
+                                        </li>
+                                    </shiro:hasPermission>
+                                    <shiro:hasPermission name="部门管理">
+                                        <li class="list_li">
+                                            <a class="list_a" href="/dept/toDeptTree">部门管理</a>
+                                        </li>
+                                    </shiro:hasPermission>
+                                    <shiro:hasPermission name="岗位管理">
+                                        <li class="list_li">
+                                            <a class="list_a" href="/post/toPostManagement">岗位管理</a>
+                                        </li>
+                                    </shiro:hasPermission>
+                                    <shiro:hasPermission name="权限管理">
+                                        <li class="list_li">
+                                            <a class="list_a" href="/prvg/toPrvg">权限管理</a>
+                                        </li>
+                                    </shiro:hasPermission>
+                                    <shiro:hasPermission name="角色管理">
+                                        <li class="list_li">
+                                            <a class="list_a" href="/role/toRole">角色管理</a>
+                                        </li>
+                                    </shiro:hasPermission>
+                                </ul>
+                            </dd>
+                        </div>
+
+                        <div shiro:hasRole = "开发者">
+                            <dt class="list_dt" >
+                                <span class="_after"></span>
+                                <p>一级菜单</p>
+                                <i class="list_dt_icon"></i>
+                            </dt>
+                            <dd class="list_dd">
+                                <ul>
+                                    <li class="list_li">二级菜单</li>
+                                </ul>
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+        </div>
+</body>
+</html>
