@@ -6,6 +6,7 @@ import com.heihei.management.system.entity.RoleDO;
 import com.heihei.management.system.entity.UserDO;
 import com.heihei.management.system.entity.form.AddUserForm;
 import com.heihei.management.system.entity.form.UpdateUserForm;
+import com.heihei.management.system.entity.util.ExcelData;
 import com.heihei.management.system.entity.vo.UserListVO;
 import com.heihei.management.system.result.CodeMsg;
 import com.heihei.management.system.result.Result;
@@ -13,6 +14,7 @@ import com.heihei.management.system.service.PostService;
 import com.heihei.management.system.service.RoleService;
 import com.heihei.management.system.service.UserService;
 import com.heihei.management.system.service.impl.DepartmentServiceImpl;
+import com.heihei.management.system.util.ExcelUtil;
 import org.apache.shiro.SecurityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,6 +30,7 @@ import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -162,5 +165,54 @@ public class UserController {
             userService.deleteUser(id);
         }
         return Result.success(true);
+    }
+
+    //导出所有的数据
+    @RequestMapping (value = "/download")
+    public void excelDownload(HttpServletResponse response) throws IOException {
+        List<List<String>> data = new ArrayList<>();
+        List<String> head = new ArrayList<>();
+        //ExcelData excel = new ExcelData();
+        head.add("用户名");
+        head.add("电话号码");
+        head.add("邮箱");
+        head.add("性别");
+        head.add("部门");
+        head.add("岗位");
+        head.add("薪资");
+        head.add("角色");
+        head.add("创建时间");
+        head.add("更新时间");
+        data.add(head);
+        List<UserListVO> userList = userService.listUser();
+        for (UserListVO userVO : userList) {
+            List<String> row = new ArrayList<>();
+            UserDO user = userVO.getUser();
+            row.add(user.getName());
+            row.add(user.getTelephone());
+            row.add(user.getEmail());
+            row.add(user.getSex() == 0 ? "男" : "女");
+            if (userVO.getDeptPosis().size() > 0) {
+                row.add(userVO.getDeptPosis().get(0).getDeptName());
+                row.add(userVO.getDeptPosis().get(0).getPostName());
+                row.add(userVO.getDeptPosis().get(0).getSalary()+"");
+            }else{
+                row.add("");
+                row.add("");
+                row.add("");
+            }
+            if (userVO.getRoles().size() > 0) {
+                row.add(userVO.getRoles().get(0).getName());
+            }else{
+                row.add("");
+            }
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            row.add(dateFormat.format(user.getCrtTime()));
+            row.add(dateFormat.format(user.getUpdtTime()));
+            data.add(row);
+        }
+        String sheetName = "用户列表";
+        String fileName = "user.xls";
+        ExcelUtil.exportExcel(response,data,sheetName,fileName,15);
     }
 }

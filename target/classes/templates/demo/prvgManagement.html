@@ -46,8 +46,9 @@
                     </div>
 
                     <div class="col-li-2 col-md-4">
-                        <button type="button" class="btn btn-primary adduser" onclick="showAddPrvgMadal()">添加</button>
-                        <button type="button" class="btn btn-primary adduser" onclick="BatchDelPrvg()">批量删除</button>
+                        <button type="button" class="btn btn-primary" onclick="showAddPrvgMadal()">添加</button>
+                        <button type="button" class="btn btn-primary" onclick="BatchDelPrvg()">批量删除</button>
+                        <button type="button" class="btn btn-primary" onclick="exportPrvg()">导出</button>
                     </div>
                 </div>
                 <!-- 表格显示区域 -->
@@ -428,6 +429,9 @@
                 }, function(index){
                     layer.close(index);
                 });
+            }
+            function exportPrvg() {
+                window.location.href = "/prvg/download"
             }
     </script>
 </body>

@@ -6,6 +6,7 @@ import com.heihei.management.system.entity.UserDO;
 import com.heihei.management.system.result.CodeMsg;
 import com.heihei.management.system.result.Result;
 import com.heihei.management.system.service.PrivilegeService;
+import com.heihei.management.system.util.ExcelUtil;
 import org.apache.shiro.SecurityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,6 +17,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -33,7 +37,7 @@ public class PrvgController {
     @RequestMapping(value = "toPrvg")
     public String toPrvg(Model model) {
         List<PrivilegeDO> privileges = privilegeService.listPrivilege();
-        for (int i = 0;i < privileges.size();i++){
+            for (int i = 0;i < privileges.size();i++){
             logger.info(privileges.get(i).toString());
         }
         model.addAttribute("prvgs",privileges);
@@ -122,5 +126,24 @@ public class PrvgController {
             privilegeService.deletePrvgByPrvgId(id);
         }
         return Result.success(true);
+    }
+
+    @RequestMapping("/download")
+    public void ExcelDownload(HttpServletResponse response) throws IOException {
+        List<List<String>> data = new ArrayList<>();
+        List<String> head = new ArrayList<>();
+        head.add("权限名");
+        head.add("访问链接");
+        data.add(head);
+        List<PrivilegeDO> privileges = privilegeService.listPrivilege();
+        for (PrivilegeDO prvg : privileges) {
+            List<String> row = new ArrayList<>();
+            row.add(prvg.getName());
+            row.add(prvg.getUrl());
+            data.add(row);
+        }
+        String sheetName = "权限列表";
+        String fileName = "prvg.xls";
+        ExcelUtil.exportExcel(response,data,sheetName,fileName,20);
     }
 }

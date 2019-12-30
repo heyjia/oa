@@ -10,6 +10,7 @@ import com.heihei.management.system.result.CodeMsg;
 import com.heihei.management.system.result.Result;
 import com.heihei.management.system.service.PrivilegeService;
 import com.heihei.management.system.service.RoleService;
+import com.heihei.management.system.util.ExcelUtil;
 import org.apache.shiro.SecurityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,6 +22,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.management.relation.Role;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -193,5 +196,36 @@ public class RoleController {
             roleService.addPrvgToRole(role.getId(),prvgId);
         }
         return Result.success(true);
+    }
+
+    @RequestMapping(value = "/download")
+    public void excelDownload(HttpServletResponse response) throws IOException {
+        List<List<String>> data = new ArrayList<>();
+        List<String> head = new ArrayList<>();
+        head.add("角色名");
+        head.add("角色权限");
+        data.add(head);
+        List<RoleDO> roles = roleService.selectRoles();
+        List<RoleVO> roleVos = new ArrayList<>();
+        for (RoleDO role : roles) {
+            RoleVO v = new RoleVO();
+            v.setRole(role);
+            List<PrivilegeDO> privileges = privilegeService.listPrivilegeByRoleId(role.getId());
+            v.setPrvgs(privileges);
+            roleVos.add(v);
+        }
+        for (RoleVO role :roleVos) {
+            List<String> row = new ArrayList<>();
+            row.add(role.getRole().getName());
+            String prvgs = "";
+            for (PrivilegeDO privilege : role.getPrvgs()) {
+                prvgs += privilege.getName() + " ";
+            }
+            row.add(prvgs);
+            data.add(row);
+        }
+        String sheetName = "角色列表";
+        String fileName = "role.xls";
+        ExcelUtil.exportExcel(response,data,sheetName,fileName,50);
     }
 }

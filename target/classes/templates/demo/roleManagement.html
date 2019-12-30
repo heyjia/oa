@@ -41,15 +41,16 @@
                         <div class="input-group">
                             <input id = "selectRoleTip" name = "selectRoleTip" type="text" class="form-control" placeholder="Search By Role Name">
                             <span class="input-group-btn">
-                                  <button class="btn btn-default" type="button" onclick="selectRoleTip()">搜索</button>
-                                    <button class="btn btn-default" type="button" onclick="clearRoleTip()">清空</button>
-                                </span>
+                                  <button class="btn btn-primary" type="button" onclick="selectRoleTip()">搜索</button>
+                                  <button class="btn btn-primary" type="button" onclick="clearRoleTip()">清空</button>
+                            </span>
                         </div>
                     </div>
 
                     <div class="col-li-2 col-md-4">
-                        <button type="button" class="btn btn-primary adduser" onclick="showAddRoleMadal()">添加</button>
-                        <button type="button" class="btn btn-primary adduser" onclick="BatchDelRole()">批量删除</button>
+                        <button type="button" class="btn btn-primary" onclick="showAddRoleMadal()">添加</button>
+                        <button type="button" class="btn btn-primary" onclick="BatchDelRole()">批量删除</button>
+                        <button class="btn btn-primary" type="button" onclick="exportRole()">导出</button>
                     </div>
                 </div>
                 <!-- 表格显示区域 -->
@@ -417,6 +418,9 @@
                 }, function(index){
                     layer.close(index);
                 });
+            }
+            function exportRole() {
+                window.location.href = "/role/download";
             }
     </script>
 </body>

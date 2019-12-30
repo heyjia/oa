@@ -6,6 +6,7 @@ import com.heihei.management.system.entity.form.AddPostForm;
 import com.heihei.management.system.result.CodeMsg;
 import com.heihei.management.system.result.Result;
 import com.heihei.management.system.service.PostService;
+import com.heihei.management.system.util.ExcelUtil;
 import org.apache.shiro.SecurityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,6 +17,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -139,4 +144,27 @@ public class PostController {
         return Result.success(true);
     }
 
+    @RequestMapping(value = "/download")
+    public void excelDownload(HttpServletResponse response) throws IOException {
+        List<List<String>> data = new ArrayList<>();
+        List<String> head = new ArrayList<>();
+        head.add("岗位名");
+        head.add("描述");
+        head.add("创建时间");
+        head.add("更新时间");
+        data.add(head);
+        List<PositionDO> positions = postService.listPost();
+        for (PositionDO post : positions) {
+            List<String> row = new ArrayList<>();
+            row.add(post.getName());
+            row.add(post.getDescribe());
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+            row.add(format.format(post.getCrtTime()));
+            row.add(format.format(post.getUpdtTime()));
+            data.add(row);
+        }
+        String sheetName = "岗位列表";
+        String fileName = "post.xls";
+        ExcelUtil.exportExcel(response,data,sheetName,fileName,20);
+    }
 }
