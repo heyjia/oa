@@ -18,7 +18,7 @@ import java.util.List;
 public interface PostDao {
     @Select("select * from user_post where user_id = #{userId}")
     List<UserPostDO> listUserPost(@Param("userId")int userId);
-    @Select("SELECT pudp.dept_id dept_id,pudp.dept_name dept_name,pudp.salary,p.id post_id,p.name post_name FROM POSITION p INNER JOIN (SELECT d.id dept_id,d.name dept_name,udp.post_id,udp.salary \n" +
+    @Select("SELECT pudp.dept_id dept_id,pudp.dept_name dept_name,pudp.salary,p.id post_id,p.name post_name FROM `position` p INNER JOIN (SELECT d.id dept_id,d.name dept_name,udp.post_id,udp.salary \n" +
             "   FROM  department d\n" +
             "     INNER JOIN (\n" +
             "        SELECT dept_id,post_id , salary FROM user_post WHERE user_id = #{userId})\n" +

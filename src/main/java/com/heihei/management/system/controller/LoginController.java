@@ -31,6 +31,10 @@ public class LoginController {
     ThymeleafViewResolver thymleafViewResolver;
     Logger logger = LoggerFactory.getLogger(LoginController.class);
     // 拦截用户请求，跳转到登录页面
+    @RequestMapping("/")
+    public String test() {
+        return "demo/login";
+    }
     @RequestMapping("/toLogin")
     public String toLogin(){
         return "demo/login";

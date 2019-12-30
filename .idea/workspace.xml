@@ -1,7 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4f939baa-3b89-4c67-951b-55aa6ba9c241" name="Default Changelist" comment="" />
+    <list default="true" id="4f939baa-3b89-4c67-951b-55aa6ba9c241" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/System.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heihei/management/ManagementSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/ManagementSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/dao/PostDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/dao/PostDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/util/RSAUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/util/RSAUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/ManagementSystem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/config/ShiroConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/config/ShiroConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/controller/DeptController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/controller/DeptController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/controller/PersonalCenterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/controller/PersonalCenterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/controller/PostController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/controller/PostController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/controller/PrvgController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/controller/PrvgController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/controller/RoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/controller/RoleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/dao/DeptDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/dao/DeptDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/dao/PostDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/dao/PostDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/dao/PrivilegeDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/dao/PrivilegeDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/dao/RoleDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/dao/RoleDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/dao/RolePrivilegeDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/dao/RolePrivilegeDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/dao/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/dao/UserRoleDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/dao/UserRoleDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/DepartmentDO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/DepartmentDO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/PositionDO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/PositionDO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/PostDeptDO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/PostDeptDO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/PrivilegeDO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/PrivilegeDO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/RoleDO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/RoleDO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/RolePrivilegeDO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/RolePrivilegeDO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/UserDO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/UserDO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/UserPostDO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/UserPostDO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/UserRoleDO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/UserRoleDO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/form/AddDeptForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/form/AddDeptForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/form/AddPostForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/form/AddPostForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/form/AddRoleForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/form/AddRoleForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/form/AddUserForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/form/AddUserForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/form/UpdateUserForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/form/UpdateUserForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/vo/DeptAndPostVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/vo/DeptAndPostVO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/vo/DeptPosiVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/vo/DeptPosiVO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/vo/DeptVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/vo/DeptVO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/vo/RolePrvgVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/vo/RolePrvgVO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/vo/RoleVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/vo/RoleVO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/vo/TreeVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/vo/TreeVO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/vo/UserListVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/entity/vo/UserListVO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/result/CodeMsg.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/result/CodeMsg.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/result/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/result/Result.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/DeptService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/DeptService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/PostService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/PostService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/PrivilegeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/PrivilegeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/RolePrivilegeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/RolePrivilegeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/RoleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/RoleService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/UserPostService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/UserPostService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/UserRoleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/UserRoleService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/impl/DepartmentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/impl/DepartmentServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/impl/PostServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/impl/PostServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/impl/PrivilegeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/impl/PrivilegeServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/impl/RolePrivilegeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/impl/RolePrivilegeServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/impl/RoleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/impl/RoleServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/impl/UserPostServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/impl/UserPostServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/impl/UserRoleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/impl/UserRoleServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/shiro/MyShiroRealm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/shiro/MyShiroRealm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/util/RSAUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/util/RSAUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.heihei.Management.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.heihei.Management.AppTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.heihei.Management.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.heihei.Management.AppTest.txt" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +109,9 @@
     </option>
   </component>
   <component name="ProjectId" id="1VFdczsFWNynymkok7fM1ouXg3x" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RequestMappingsPanelOrder0" value="0" />
@@ -76,6 +152,9 @@
     <option name="myCommands">
       <command value="mvn test" />
       <command value="mvn report" />
+      <command value="mvn clean" />
+      <command value="mvn package" />
+      <command value="mvn clean package" />
     </option>
   </component>
   <component name="RunDashboard">
@@ -95,7 +174,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ManagementSystem">
+  <component name="RunManager" selected="Spring Boot.System">
     <configuration name="RSAUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.heihei.management.system.util.RSAUtil" />
       <module name="system" />
@@ -135,19 +214,49 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="System" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="System" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.heihei.management.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.heihei.management.System" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.System" />
         <item itemvalue="Spring Boot.ManagementSystem" />
-        <item itemvalue="Spring Boot.ManagementSystem (1)" />
         <item itemvalue="Application.RSAUtil" />
+        <item itemvalue="Spring Boot.ManagementSystem (1)" />
       </list>
     </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="allServicesViewState">
       <serviceView>
+        <option name="contentProportion" value="0.17486338" />
         <treeState>
-          <expand />
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@d7061eb3" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@d7061eb3" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@f745457" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@d7061eb3" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@5bf8dce5" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+          </expand>
           <select />
         </treeState>
       </serviceView>
@@ -168,11 +277,25 @@
       <workItem from="1577107558027" duration="42794000" />
       <workItem from="1577234921613" duration="18627000" />
       <workItem from="1577285149026" duration="1069000" />
-      <workItem from="1577409440627" duration="6963000" />
+      <workItem from="1577409440627" duration="6964000" />
+      <workItem from="1577498058532" duration="15890000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

@@ -113,7 +113,7 @@ public class RSAUtil {
     }
     public static void main(String [] args) {
         System.out.println("RSA加密");
-        String message = "123456";
+        String message = "123";
         genKeyPair();
         System.out.println("随机生成的公钥为:" + RSAUtil.keyMap.get(0));
         System.out.println("随机生成的私钥为:" + RSAUtil.keyMap.get(1));
