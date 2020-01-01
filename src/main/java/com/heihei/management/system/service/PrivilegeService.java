@@ -20,7 +20,7 @@ public interface PrivilegeService {
     //根据权限名查询权限
     PrivilegeDO getPrvgByPrvgName(String name);
     //添加权限
-    int addPost(PrivilegeDO privilegeDO);
+    int addPrvg(PrivilegeDO privilegeDO);
     //删除权限和角色的联系
     int deletePrvgRoleByPrvgId(int prvgId);
     //删除权限

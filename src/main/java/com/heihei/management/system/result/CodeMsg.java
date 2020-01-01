@@ -45,7 +45,9 @@ public class CodeMsg {
     public static final CodeMsg DELETE_ROLE_ERROR =  new CodeMsg(80001,"删除角色失败，数据库异常");
     public static final CodeMsg ROLE_EXISTED = new CodeMsg(80002,"角色名已存在");
     public static final CodeMsg ADD_ROLE_ERROR = new CodeMsg(80003,"添加角色失败，数据库异常");
-    public static final CodeMsg UPDATE_ROLE_ERROR = new CodeMsg(80004,"更新角色失败，数据库异常");;
+    public static final CodeMsg UPDATE_ROLE_ERROR = new CodeMsg(80004,"更新角色失败，数据库异常");
+
+    public static final CodeMsg READ_FILE_ERRPE = new CodeMsg(90001,"读取文件失败");;
     public CodeMsg(int code, String msg) {
         this.code = code;
         this.msg = msg;

@@ -43,8 +43,8 @@ public class PrivilegeServiceImpl implements PrivilegeService {
     }
     // 添加权限
     @Override
-    public int addPost(PrivilegeDO privilegeDO) {
-        return privilegeDao.addPost(privilegeDO);
+    public int addPrvg(PrivilegeDO privilegeDO) {
+        return privilegeDao.addPrvg(privilegeDO);
     }
 
     @Override

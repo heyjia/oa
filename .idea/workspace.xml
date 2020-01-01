@@ -2,7 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f939baa-3b89-4c67-951b-55aa6ba9c241" name="Default Changelist" comment="qi">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/entity/ImportResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/controller/PrvgController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/controller/PrvgController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/dao/PrivilegeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/dao/PrivilegeDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/result/CodeMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/result/CodeMsg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/service/PrivilegeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/service/PrivilegeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/service/impl/PrivilegeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/service/impl/PrivilegeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/demo/prvgManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/demo/prvgManagement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/controller/PrvgController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/controller/PrvgController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/dao/PrivilegeDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/dao/PrivilegeDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/result/CodeMsg.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/result/CodeMsg.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/PrivilegeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/PrivilegeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/impl/PrivilegeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/impl/PrivilegeServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/demo/prvgManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/demo/prvgManagement.html" afterDir="false" />
+>>>>>>> dev
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -211,7 +227,7 @@
       <workItem from="1577498058532" duration="15890000" />
       <workItem from="1577668657632" duration="4653000" />
       <workItem from="1577715596518" duration="10299000" />
-      <workItem from="1577862488587" duration="32000" />
+      <workItem from="1577862488587" duration="6980000" />
     </task>
     <servers />
   </component>

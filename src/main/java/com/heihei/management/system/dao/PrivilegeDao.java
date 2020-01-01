@@ -22,7 +22,7 @@ public interface PrivilegeDao {
 
     @Insert("INSERT INTO `privilege`(`name`,`url`) VALUES(#{name},#{url})")
     @SelectKey(keyColumn = "id",keyProperty = "id",before = false,resultType = int.class,statement="select last_insert_id()")
-    int addPost(PrivilegeDO privilegeDO);
+    int addPrvg(PrivilegeDO privilegeDO);
 
     @Delete("delete from role_privilege where privilege_id = #{prvgId}")
     int deletePrvgRoleByPrvgId(@Param("prvgId") int prvgId);
