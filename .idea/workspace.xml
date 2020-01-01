@@ -4,21 +4,38 @@
     <list default="true" id="4f939baa-3b89-4c67-951b-55aa6ba9c241" name="Default Changelist" comment="qi">
       <change afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/entity/ImportResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< HEAD
-=======
       <change beforePath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/controller/PrvgController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/controller/PrvgController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/dao/PrivilegeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/dao/PrivilegeDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/result/CodeMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/result/CodeMsg.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/service/PrivilegeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/service/PrivilegeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/service/impl/PrivilegeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/service/impl/PrivilegeServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/demo/prvgManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/demo/prvgManagement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/controller/PrvgController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/controller/PrvgController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/dao/PrivilegeDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/dao/PrivilegeDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/result/CodeMsg.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/result/CodeMsg.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/PrivilegeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/PrivilegeService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/impl/PrivilegeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/impl/PrivilegeServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/demo/prvgManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/demo/prvgManagement.html" afterDir="false" />
->>>>>>> dev
+      <change beforePath="$PROJECT_DIR$/target/classes/static/demo/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/demo/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/demo/css/bootstrapValidator.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/demo/css/bootstrapValidator.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/demo/css/bootstrapstyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/demo/css/bootstrapstyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/demo/css/config.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/demo/css/config.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/demo/css/font-awesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/demo/css/font-awesome.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/demo/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/demo/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/demo/css/jquery.pagination.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/demo/css/jquery.pagination.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/demo/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/demo/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/demo/fonts/glyphicons-halflings-regular.svg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/demo/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/demo/js/bootstrap-select.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/demo/js/bootstrap-select.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/demo/js/bootstrap-treeview.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/demo/js/bootstrap-treeview.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/demo/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/demo/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/demo/js/bootstrapValidator.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/demo/js/bootstrapValidator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/demo/js/jquery-3.3.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/demo/js/jquery-3.3.1.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/demo/js/jquery.slimscroll.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/demo/js/jquery.slimscroll.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/demo/js/jquery.ztree.core.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/demo/js/jquery.ztree.core.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/demo/js/jquery.ztree.excheck.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/demo/js/jquery.ztree.excheck.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/demo/js/jquery.ztree.exedit.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/demo/js/jquery.ztree.exedit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/demo/js/modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/demo/js/modal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/demo/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/demo/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/demo/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/demo/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/demo/personalCenter.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/demo/personalCenter.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -81,8 +98,12 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Graduation project\system\src\main\resources\static\demo\css" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Graduation project\system\src\main\resources\templates\demo" />
+      <recent name="E:\Graduation project\system\src\main\resources\static\demo\js" />
+      <recent name="E:\Graduation project\system\src\main\resources\templates\include" />
+      <recent name="E:\Graduation project\system\src\main\resources\static\demo" />
+      <recent name="E:\Graduation project\system\src\main\java\com\heihei\management\system\service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.heihei.management.system.dao" />
@@ -90,12 +111,8 @@
       <recent name="com.heihei.management.system.config" />
       <recent name="com.heihei.management.system.shiro" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Graduation project\system\src\main\resources\templates\demo" />
-      <recent name="E:\Graduation project\system\src\main\resources\static\demo\js" />
-      <recent name="E:\Graduation project\system\src\main\resources\templates\include" />
-      <recent name="E:\Graduation project\system\src\main\resources\static\demo" />
-      <recent name="E:\Graduation project\system\src\main\java\com\heihei\management\system\service" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Graduation project\system\src\main\resources\static\demo\css" />
     </key>
   </component>
   <component name="RunAnythingCache">
