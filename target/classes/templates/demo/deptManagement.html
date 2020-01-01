@@ -63,8 +63,9 @@
                                     </div>
 
                                     <div class="col-li-2 col-md-4">
-                                        <button type="button" class="btn btn-primary adduser" onclick="addDept()">添加</button>
-                                        <button type="button" class="btn btn-primary adduser" onclick="BatchDelDept()">批量删除</button>
+                                        <button type="button" class="btn btn-primary" onclick="addDept()">添加</button>
+                                        <button type="button" class="btn btn-primary" onclick="BatchDelDept()">批量删除</button>
+                                        <button type="button" class="btn btn-primary" onclick="exportDept()">导出</button>
                                     </div>
                                 </div>
                                 <!-- 表格显示区域 -->
@@ -532,6 +533,9 @@
             }, function(index){
                 layer.close(index);
             });
+        }
+        function exportDept() {
+            window.location.href = "/dept/download";
         }
     </script>
 </body>

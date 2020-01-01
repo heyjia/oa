@@ -11,6 +11,7 @@ import com.heihei.management.system.result.CodeMsg;
 import com.heihei.management.system.result.Result;
 import com.heihei.management.system.service.DeptService;
 import com.heihei.management.system.service.PostService;
+import com.heihei.management.system.util.ExcelUtil;
 import org.apache.shiro.SecurityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,6 +23,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -202,5 +207,33 @@ public class DeptController {
             deptService.deleteDept(id);
         }
         return Result.success(true);
+    }
+
+    @RequestMapping(value = "/download")
+    public void excelDownload(HttpServletResponse response) throws IOException {
+        List<List<String>> data = new ArrayList<>();
+        List<String> head = new ArrayList<>();
+        head.add("部门名");
+        head.add("上级部门");
+        head.add("地址");
+        head.add("描述");
+        head.add("创建时间");
+        head.add("更新时间");
+        data.add(head);
+        List<DeptVO> depts = deptService.listDeptWithPDept();
+        for (DeptVO deptVO : depts) {
+            List<String> row = new ArrayList<>();
+            row.add(deptVO.getName());
+            row.add(deptVO.getPName());
+            row.add(deptVO.getAddress());
+            row.add(deptVO.getDescribe());
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+            row.add(formatter.format(deptVO.getCrtTime()));
+            row.add(formatter.format(deptVO.getUpdtTime()));
+            data.add(row);
+        }
+        String sheetName = "部门列表";
+        String fileName = "post.xls";
+        ExcelUtil.exportExcel(response,data,sheetName,fileName,20);
     }
 }
