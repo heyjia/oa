@@ -52,7 +52,7 @@
                                 <!-- 顶部搜索添加框 -->
                                 <div class="row">
                                     <!-- 搜索框 -->
-                                    <div class="col-lg-5 col-md-7">
+                                    <div class="col-lg-5 col-md-6">
                                         <div class="input-group">
                                             <input id = "selectDeptTip" name = "selectDeptTip" type="text" class="form-control" placeholder="Search By DepartmentName">
                                             <span class="input-group-btn">
@@ -62,9 +62,10 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-li-2 col-md-4">
+                                    <div class="col-li-2 col-md-5">
                                         <button type="button" class="btn btn-primary" onclick="addDept()">添加</button>
                                         <button type="button" class="btn btn-primary" onclick="BatchDelDept()">批量删除</button>
+                                        <button type="button" class="btn btn-primary" onclick="showImportDept()">批量导入</button>
                                         <button type="button" class="btn btn-primary" onclick="exportDept()">导出</button>
                                     </div>
                                 </div>
@@ -220,6 +221,31 @@
                         </form>
                     </div>
                 </div>
+                <!--批量导入模态框-->
+                <div id = "importDpetModal" name = "importDpetModal" class="modal-bg  dp-n">
+                    <div class="modal-conbox">
+                        <div class="modal-t">
+                            <span class="control-label">批量导入</span>
+                        </div>
+                        <form role="form" class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">文件</label>
+                                <div class="col-sm-9">
+                                    <input id="importDeptData" name="importDeptData" type="file">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label  class="col-sm-10 control-label" style="color: red">请选择.xsl格式格式的文件 <a href="/dept/downModal">下载模板</a></label>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-4">
+                                    <button id = "importDeptBtn" name = "importDeptBtn" type="button" class="btn btn-default" onclick="importDept()">导入</button>
+                                    <button type="button" class="btn btn-default" onclick="toBackDeptList()">返回</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -340,6 +366,7 @@
         function toBackDeptList() {
             $("#addDeptModal").addClass("dp-n");
             $("#alertDeptModal").addClass("dp-n");
+            $("#importDpetModal").addClass("dp-n");
         }
         function getValueAndAddDept() {
             var checkID =$('#pst').val();
@@ -537,6 +564,50 @@
         function exportDept() {
             window.location.href = "/dept/download";
         }
+        function showImportDept() {
+            $("#importDpetModal").removeClass("dp-n");
+        }
+        
+        function importDept() {
+            var files = $('input[name="importDeptData"]').prop('files');//获取到文件列表
+            if (files.length == 0) {
+                layer.alert('请选择文件');
+                return;
+            } else {
+                var formData = new FormData();
+                var name = $("#importDeptData").val();
+                formData.append("file", $("#importDeptData")[0].files[0]);
+                formData.append("name", name);
+                var reg = /^.*\.(?:xls|xlsx)$/i;
+                if (!reg.test(name)) {//校验是否是excel格式的文件
+                    layer.alert("请上传excel格式的文件!");
+                    return;
+                }
+            }
+            $.ajax({
+                type : "post",
+                async : false,
+                traditional : true,
+                url :  "/dept/importData",
+                dataType : "json",
+                data : formData,
+                processData : false,
+                contentType : false,
+                success : function (data) {
+                    if (data.code == 0) {
+                        layer.alert("批量导入成功,共添加" + data.data.addCount + "条，共更新" + data.data.updateCount + "条",function () {
+                            window.location.href = "/dept/toDeptTree";
+                        });
+                    }else {
+                        layer.alert(data.msg);
+                    }
+                },
+                error : function () {
+                    alert("导入失败");
+                }
+            });
+        }
+
     </script>
 </body>
 </html>

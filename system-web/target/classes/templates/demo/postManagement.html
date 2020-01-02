@@ -49,6 +49,7 @@
                     <div class="col-li-2 col-md-4">
                         <button type="button" class="btn btn-primary" onclick="showAddPostMadal()">添加</button>
                         <button type="button" class="btn btn-primary" onclick="BatchDelPost()">批量删除</button>
+                        <button type="button" class="btn btn-primary" onclick="showImportPost()">批量导入</button>
                         <button type="button" class="btn btn-primary" onclick="exportPost()">导出</button>
                     </div>
                 </div>
@@ -146,6 +147,32 @@
                     </div>
                 </div>
 
+                <!--批量导入模态框-->
+                <div id = "importPostModal" name = "importPostModal" class="modal-bg  dp-n">
+                    <div class="modal-conbox">
+                        <div class="modal-t">
+                            <span class="control-label">批量导入</span>
+                        </div>
+                        <form role="form" class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">文件</label>
+                                <div class="col-sm-9">
+                                    <input id="importPostData" name="importPostData" type="file">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label  class="col-sm-10 control-label" style="color: red">请选择.xsl格式格式的文件 <a href="/post/downModal">下载模板</a></label>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-4">
+                                    <button id = "importPrvgBtn" name = "importPrvgBtn" type="button" class="btn btn-default" onclick="importPost()">导入</button>
+                                    <button type="button" class="btn btn-default" onclick="toBackPostList()">返回</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
@@ -219,6 +246,7 @@
         function toBackPostList() {
             $("#addPostModal").addClass("dp-n");
             $("#alertPostModal").addClass("dp-n");
+            $("#importPostModal").addClass("dp-n");
         }
         function showAddPostMadal() {
             $("#addPostModal").removeClass("dp-n");
@@ -414,6 +442,48 @@
             }
             function exportPost() {
                 window.location.href = "/post/download";
+            }
+            function showImportPost() {
+                $("#importPostModal").removeClass("dp-n");
+            }
+            function importPost() {
+                var files = $('input[name="importPostData"]').prop('files');//获取到文件列表
+                if (files.length == 0) {
+                    layer.alert('请选择文件');
+                    return;
+                } else {
+                    var formData = new FormData();
+                    var name = $("#importPostData").val();
+                    formData.append("file", $("#importPostData")[0].files[0]);
+                    formData.append("name", name);
+                    var reg = /^.*\.(?:xls|xlsx)$/i;
+                    if (!reg.test(name)) {//校验是否是excel格式的文件
+                        layer.alert("请上传excel格式的文件!");
+                        return;
+                    }
+                }
+                $.ajax({
+                    type : "post",
+                    async : false,
+                    traditional : true,
+                    url :  "/post/importData",
+                    dataType : "json",
+                    data : formData,
+                    processData : false,
+                    contentType : false,
+                    success : function (data) {
+                        if (data.code == 0) {
+                            layer.alert("批量导入成功,共添加" + data.data.addCount + "条，共更新" + data.data.updateCount + "条",function () {
+                                window.location.href = "/post/toPostManagement";
+                            });
+                        }else {
+                            layer.alert(data.msg);
+                        }
+                    },
+                    error : function () {
+                        alert("导入失败");
+                    }
+                });
             }
     </script>
 </body>

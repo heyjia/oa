@@ -1,6 +1,7 @@
 package com.heihei.management.system.controller;
 
 import com.heihei.management.system.entity.database.DepartmentDO;
+import com.heihei.management.system.entity.database.ImportResult;
 import com.heihei.management.system.entity.database.PositionDO;
 import com.heihei.management.system.entity.database.UserDO;
 import com.heihei.management.system.entity.form.AddDeptForm;
@@ -12,6 +13,11 @@ import com.heihei.management.system.result.Result;
 import com.heihei.management.system.service.DeptService;
 import com.heihei.management.system.service.PostService;
 import com.heihei.management.system.utils.ExcelUtil;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.Row;
 import org.apache.shiro.SecurityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,10 +26,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -234,5 +244,120 @@ public class DeptController {
         String sheetName = "部门列表";
         String fileName = "post.xls";
         ExcelUtil.exportExcel(response,data,sheetName,fileName,20);
+    }
+
+    @RequestMapping (value = "/downModal")
+    public void downModal(HttpServletResponse response) throws IOException {
+        List<List<String>> data = new ArrayList<>();
+        List<String> head = new ArrayList<>();
+        head.add("部门名");
+        head.add("上级部门");
+        head.add("描述");
+        head.add("岗位");
+        data.add(head);
+        List<String> row = new ArrayList<>();
+        row.add("XXX");
+        row.add("XXX(默认为最高级部门)");
+        row.add("XXX");
+        row.add("XXX|XXX(用“|”隔开)");
+        data.add(row);
+        String sheetName = "部门列表";
+        String fileName = "dept.xls";
+        ExcelUtil.exportExcel(response,data,sheetName,fileName,30);
+    }
+
+    @RequestMapping("/importData")
+    @ResponseBody
+    public Result<ImportResult> importData(@RequestParam("file") MultipartFile file, HttpServletResponse response, HttpServletRequest request) {
+        logger.info("进入批量导入部门的方法");
+        HSSFWorkbook workbook = null;
+        int addCount = 0;
+        int updateCount = 0;
+        try {
+            InputStream is = file.getInputStream();
+            workbook = new HSSFWorkbook(is);
+            HSSFSheet sheet = workbook.getSheetAt(0);
+            int rows = sheet.getPhysicalNumberOfRows();
+            int columns = 0;
+            for (int r = 0; r < rows; r++) {
+                if (r == 0) {
+                    columns = sheet.getRow(r).getLastCellNum();
+                    continue;
+                }
+                String name = "";
+                String pName = "";
+                String describe = "";
+                String postStr = "";
+                Row row = sheet.getRow(r);
+                DepartmentDO department = null;
+                if (row != null) {
+                    Cell cellName = row.getCell(0);
+                    cellName.setCellType(CellType.STRING);
+                    name = cellName.getStringCellValue();
+                    Cell cellPName = null;
+                    Cell cellDesb = null;
+                    Cell cellPost = null;
+                    if (row.getCell(1) != null) {
+                        cellPName = row.getCell(1);
+                        cellPName.setCellType(CellType.STRING);
+                        pName= cellPName.getStringCellValue();
+                    }
+                    if (row.getCell(2) != null) {
+                        cellDesb = row.getCell(2);
+                        cellDesb.setCellType(CellType.STRING);
+                        describe= cellDesb.getStringCellValue();
+                    }
+                    if (row.getCell(3)!= null) {
+                        cellPost = row.getCell(3);
+                        cellPost.setCellType(CellType.STRING);
+                        postStr= cellPost.getStringCellValue();
+                    }
+                    //根据岗位名查询岗位是否存在
+                    department = deptService.getDeptByDeptName(name);
+                    String[] strs = postStr.split("\\|");
+                    if (department != null) {
+                        department.setDescribe(describe);
+                        department.setUpdtTime(new Date());
+                        DepartmentDO pDept = deptService.getDeptByDeptName(pName);
+                        if (pDept != null) {
+                            department.setPid(pDept.getId());
+                        }else{
+                            department.setPid(0);
+                        }
+                        deptService.updateDept(department);
+                        postService.deletePostByDeptId(department.getId());
+                        updateCount++;
+                    }else{
+                        department = new DepartmentDO();
+                        department.setCrtTime(new Date());
+                        department.setUpdtTime(new Date());
+                        department.setName(name);
+                        department.setDescribe(describe);
+                        DepartmentDO pDept = deptService.getDeptByDeptName(pName);
+                        if (pDept != null) {
+                            department.setPid(pDept.getId());
+                        }else{
+                            department.setPid(0);
+                        }
+                        deptService.addDept(department);
+                        addCount++;
+                    }
+                    for (int i = 0; i < strs.length;i++) {
+                        logger.info(strs[i]+"");
+                        if (strs[i].equals("")){
+                            continue;
+                        }
+                        PositionDO post = postService.getPostByPostName(strs[i]);
+                        if (post == null) {
+                            continue;
+                        }
+                        deptService.addPostToDept(post.getId(),department.getId());
+                    }
+                }
+            }
+        } catch (IOException e) {
+            Result.success(CodeMsg.READ_FILE_ERRPE);
+        }
+        return Result.success(new ImportResult(addCount,updateCount));
     }
 }
