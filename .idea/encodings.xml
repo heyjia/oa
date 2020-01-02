@@ -2,5 +2,15 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/system-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/system-dao" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/system-entity" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/system-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/system-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/system-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/system-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/system-services" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/system-services" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/system-web" charset="UTF-8" />
   </component>
 </project>

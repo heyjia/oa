@@ -6,14 +6,27 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="System" />
+        <module name="system-services" />
+        <module name="system-dao" />
+        <module name="system-entity" />
+        <module name="system-web" />
+        <module name="system-common" />
         <module name="system" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="systemservice" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="System" options="-parameters" />
+      <module name="System" options="" />
+      <module name="system-common" options="-parameters" />
+      <module name="system-dao" options="-parameters" />
+      <module name="system-entity" options="-parameters" />
+      <module name="system-services" options="-parameters" />
+      <module name="system-web" options="-parameters" />
+      <module name="systemservice" options="-parameters" />
     </option>
   </component>
 </project>

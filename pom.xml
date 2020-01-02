@@ -7,7 +7,14 @@
   <groupId>com.heihei.Management</groupId>
   <artifactId>System</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <packaging>war</packaging>
+  <modules>
+    <module>system-entity</module>
+    <module>system-common</module>
+    <module>system-dao</module>
+    <module>system-services</module>
+    <module>system-web</module>
+  </modules>
+  <packaging>pom</packaging>
   <!--父工程用dependenceManagement进行管理，子工程是需要groupId 和 artifactId-->
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -28,18 +35,17 @@
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-tomcat</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-thymeleaf</artifactId>
     </dependency>
     <dependency>
       <groupId>org.mybatis.spring.boot</groupId>
       <artifactId>mybatis-spring-boot-starter</artifactId>
       <version>1.3.1</version>
-    </dependency>
-    <!--如果打包成jar包的话，就不用这一步-->
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-tomcat</artifactId>
-      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>mysql</groupId>
@@ -86,14 +92,6 @@
     <plugins>
       <!--指定打包方式-->
       <!--war包-->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-war-plugin</artifactId>
-        <version>2.6</version>
-        <configuration>
-          <failOnMissingWebXml>false</failOnMissingWebXml>
-        </configuration>
-      </plugin>
       <!--jar包-->
 <!--      <plugin>-->
 <!--        <groupId>org.apache.maven.plugins</groupId>-->
@@ -115,13 +113,6 @@
       <!--         <groupId>org.springframework.boot</groupId>-->
       <!--         <artifactId>spring-boot-maven-plugin</artifactId>-->
       <!--      </plugin>-->
-      <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-        <configuration>
-          <fork>true</fork>
-        </configuration>
-      </plugin>
     </plugins>
   </build>
 </project>

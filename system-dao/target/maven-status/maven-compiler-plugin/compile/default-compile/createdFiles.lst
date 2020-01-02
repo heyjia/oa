@@ -1,0 +1,7 @@
+com\heihei\management\system\dao\RoleDao.class
+com\heihei\management\system\dao\DeptDao.class
+com\heihei\management\system\dao\PostDao.class
+com\heihei\management\system\dao\RolePrivilegeDao.class
+com\heihei\management\system\dao\PrivilegeDao.class
+com\heihei\management\system\dao\UserRoleDao.class
+com\heihei\management\system\dao\UserDao.class
