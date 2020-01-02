@@ -6,15 +6,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="system-services" />
-        <module name="system-dao" />
-        <module name="system-entity" />
         <module name="system-web" />
         <module name="system-common" />
         <module name="system" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="system-dao" target="1.8" />
+      <module name="system-entity" target="1.8" />
+      <module name="system-services" target="1.8" />
       <module name="systemservice" target="1.8" />
     </bytecodeTargetLevel>
   </component>

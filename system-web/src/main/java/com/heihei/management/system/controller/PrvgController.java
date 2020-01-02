@@ -1,8 +1,8 @@
 package com.heihei.management.system.controller;
 
-import com.heihei.management.system.entity.database.ImportResult;
-import com.heihei.management.system.entity.database.PrivilegeDO;
-import com.heihei.management.system.entity.database.UserDO;
+import com.heihei.management.system.entity.ImportResult;
+import com.heihei.management.system.entity.PrivilegeDO;
+import com.heihei.management.system.entity.UserDO;
 import com.heihei.management.system.result.CodeMsg;
 import com.heihei.management.system.result.Result;
 import com.heihei.management.system.service.PrivilegeService;

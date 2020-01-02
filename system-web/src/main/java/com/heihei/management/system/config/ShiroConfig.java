@@ -1,7 +1,7 @@
 package com.heihei.management.system.config;
 
 import at.pollux.thymeleaf.shiro.dialect.ShiroDialect;
-import com.heihei.management.system.entity.database.PrivilegeDO;
+import com.heihei.management.system.entity.PrivilegeDO;
 import com.heihei.management.system.service.PrivilegeService;
 import com.heihei.management.system.shiro.MyShiroRealm;
 import org.apache.shiro.cache.ehcache.EhCacheManager;

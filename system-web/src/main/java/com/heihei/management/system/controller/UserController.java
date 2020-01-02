@@ -1,9 +1,9 @@
 package com.heihei.management.system.controller;
 
-import com.heihei.management.system.entity.database.DepartmentDO;
-import com.heihei.management.system.entity.database.PositionDO;
-import com.heihei.management.system.entity.database.RoleDO;
-import com.heihei.management.system.entity.database.UserDO;
+import com.heihei.management.system.entity.DepartmentDO;
+import com.heihei.management.system.entity.PositionDO;
+import com.heihei.management.system.entity.RoleDO;
+import com.heihei.management.system.entity.UserDO;
 import com.heihei.management.system.entity.form.AddUserForm;
 import com.heihei.management.system.entity.form.UpdateUserForm;
 import com.heihei.management.system.entity.vo.UserListVO;

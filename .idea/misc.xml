@@ -12,7 +12,10 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/system-dao/pom.xml" />
+        <option value="$PROJECT_DIR$/system-entity/pom.xml" />
         <option value="$PROJECT_DIR$/system-service/pom.xml" />
+        <option value="$PROJECT_DIR$/system-services/pom.xml" />
       </set>
     </option>
   </component>

@@ -2,21 +2,161 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f939baa-3b89-4c67-951b-55aa6ba9c241" name="Default Changelist" comment="qi">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-common/target/system-common-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/system-common/target/system-common-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-dao/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-dao/src/main/java/com/heihei/management/system/dao/DeptDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/dao/DeptDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-dao/src/main/java/com/heihei/management/system/dao/PostDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/dao/PostDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-dao/src/main/java/com/heihei/management/system/dao/PrivilegeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/dao/PrivilegeDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-dao/src/main/java/com/heihei/management/system/dao/RoleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/dao/RoleDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-dao/src/main/java/com/heihei/management/system/dao/RolePrivilegeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/dao/RolePrivilegeDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-dao/src/main/java/com/heihei/management/system/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-dao/src/main/java/com/heihei/management/system/dao/UserRoleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/dao/UserRoleDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-dao/target/classes/com/heihei/management/system/dao/DeptDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-dao/target/classes/com/heihei/management/system/dao/PostDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-dao/target/classes/com/heihei/management/system/dao/PrivilegeDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-dao/target/classes/com/heihei/management/system/dao/RoleDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-dao/target/classes/com/heihei/management/system/dao/RolePrivilegeDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-dao/target/classes/com/heihei/management/system/dao/UserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-dao/target/classes/com/heihei/management/system/dao/UserRoleDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-dao/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-dao/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-dao/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-dao/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-dao/target/system-dao-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/src/main/java/com/heihei/management/system/entity/database/DepartmentDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/entity/DepartmentDO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/src/main/java/com/heihei/management/system/entity/database/ImportResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/entity/ImportResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/src/main/java/com/heihei/management/system/entity/database/PositionDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/entity/PositionDO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/src/main/java/com/heihei/management/system/entity/database/PostDeptDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/entity/PostDeptDO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/src/main/java/com/heihei/management/system/entity/database/PrivilegeDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/entity/PrivilegeDO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/src/main/java/com/heihei/management/system/entity/database/RoleDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/entity/RoleDO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/src/main/java/com/heihei/management/system/entity/database/RolePrivilegeDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/entity/RolePrivilegeDO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/src/main/java/com/heihei/management/system/entity/database/UserDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/entity/UserDO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/src/main/java/com/heihei/management/system/entity/database/UserPostDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/entity/UserPostDO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/src/main/java/com/heihei/management/system/entity/database/UserRoleDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/entity/UserRoleDO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/src/main/java/com/heihei/management/system/entity/form/AddDeptForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/entity/form/AddDeptForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/src/main/java/com/heihei/management/system/entity/form/AddPostForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/entity/form/AddPostForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/src/main/java/com/heihei/management/system/entity/form/AddRoleForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/entity/form/AddRoleForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/src/main/java/com/heihei/management/system/entity/form/AddUserForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/entity/form/AddUserForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/src/main/java/com/heihei/management/system/entity/form/UpdateUserForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/entity/form/UpdateUserForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/src/main/java/com/heihei/management/system/entity/util/ExcelData.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/entity/util/ExcelData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/src/main/java/com/heihei/management/system/entity/vo/DeptAndPostVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/entity/vo/DeptAndPostVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/src/main/java/com/heihei/management/system/entity/vo/DeptPosiVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/entity/vo/DeptPosiVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/src/main/java/com/heihei/management/system/entity/vo/DeptVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/entity/vo/DeptVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/src/main/java/com/heihei/management/system/entity/vo/RolePrvgVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/entity/vo/RolePrvgVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/src/main/java/com/heihei/management/system/entity/vo/RoleVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/entity/vo/RoleVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/src/main/java/com/heihei/management/system/entity/vo/TreeVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/entity/vo/TreeVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/src/main/java/com/heihei/management/system/entity/vo/UserListVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/entity/vo/UserListVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/target/classes/com/heihei/management/system/entity/database/DepartmentDO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/target/classes/com/heihei/management/system/entity/database/ImportResult.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/target/classes/com/heihei/management/system/entity/database/PositionDO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/target/classes/com/heihei/management/system/entity/database/PostDeptDO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/target/classes/com/heihei/management/system/entity/database/PrivilegeDO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/target/classes/com/heihei/management/system/entity/database/RoleDO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/target/classes/com/heihei/management/system/entity/database/RolePrivilegeDO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/target/classes/com/heihei/management/system/entity/database/UserDO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/target/classes/com/heihei/management/system/entity/database/UserPostDO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/target/classes/com/heihei/management/system/entity/database/UserRoleDO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/target/classes/com/heihei/management/system/entity/form/AddDeptForm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/target/classes/com/heihei/management/system/entity/form/AddPostForm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/target/classes/com/heihei/management/system/entity/form/AddRoleForm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/target/classes/com/heihei/management/system/entity/form/AddUserForm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/target/classes/com/heihei/management/system/entity/form/UpdateUserForm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/target/classes/com/heihei/management/system/entity/util/ExcelData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/target/classes/com/heihei/management/system/entity/vo/DeptAndPostVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/target/classes/com/heihei/management/system/entity/vo/DeptPosiVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/target/classes/com/heihei/management/system/entity/vo/DeptVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/target/classes/com/heihei/management/system/entity/vo/RolePrvgVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/target/classes/com/heihei/management/system/entity/vo/RoleVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/target/classes/com/heihei/management/system/entity/vo/TreeVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/target/classes/com/heihei/management/system/entity/vo/UserListVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-entity/target/system-entity-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-services/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-services/src/main/java/com/heihei/management/system/service/DeptService.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/service/DeptService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-services/src/main/java/com/heihei/management/system/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/service/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-services/src/main/java/com/heihei/management/system/service/PrivilegeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/service/PrivilegeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-services/src/main/java/com/heihei/management/system/service/RolePrivilegeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/service/RolePrivilegeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-services/src/main/java/com/heihei/management/system/service/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/service/RoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-services/src/main/java/com/heihei/management/system/service/UserPostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/service/UserPostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-services/src/main/java/com/heihei/management/system/service/UserRoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/service/UserRoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-services/src/main/java/com/heihei/management/system/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-services/src/main/java/com/heihei/management/system/service/impl/DepartmentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/service/impl/DepartmentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-services/src/main/java/com/heihei/management/system/service/impl/PostServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/service/impl/PostServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-services/src/main/java/com/heihei/management/system/service/impl/PrivilegeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/service/impl/PrivilegeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-services/src/main/java/com/heihei/management/system/service/impl/RolePrivilegeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/service/impl/RolePrivilegeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-services/src/main/java/com/heihei/management/system/service/impl/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/service/impl/RoleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-services/src/main/java/com/heihei/management/system/service/impl/UserPostServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/service/impl/UserPostServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-services/src/main/java/com/heihei/management/system/service/impl/UserRoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/service/impl/UserRoleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-services/src/main/java/com/heihei/management/system/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-services/target/classes/com/heihei/management/system/service/DeptService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-services/target/classes/com/heihei/management/system/service/PostService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-services/target/classes/com/heihei/management/system/service/PrivilegeService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-services/target/classes/com/heihei/management/system/service/RolePrivilegeService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-services/target/classes/com/heihei/management/system/service/RoleService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-services/target/classes/com/heihei/management/system/service/UserPostService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-services/target/classes/com/heihei/management/system/service/UserRoleService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-services/target/classes/com/heihei/management/system/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-services/target/classes/com/heihei/management/system/service/impl/DepartmentServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-services/target/classes/com/heihei/management/system/service/impl/PostServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-services/target/classes/com/heihei/management/system/service/impl/PrivilegeServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-services/target/classes/com/heihei/management/system/service/impl/RolePrivilegeServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-services/target/classes/com/heihei/management/system/service/impl/RoleServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-services/target/classes/com/heihei/management/system/service/impl/UserPostServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-services/target/classes/com/heihei/management/system/service/impl/UserRoleServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-services/target/classes/com/heihei/management/system/service/impl/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-services/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-services/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-services/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-services/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-services/target/system-services-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/config/ShiroConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/config/ShiroConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/controller/DeptController.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/controller/DeptController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/controller/PersonalCenterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/controller/PersonalCenterController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/controller/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/controller/PrvgController.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/controller/PrvgController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/controller/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/controller/RoleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system-web/src/main/resources/templates/demo/deptManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/resources/templates/demo/deptManagement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system-web/src/main/resources/templates/demo/postManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/resources/templates/demo/postManagement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system-web/src/main/resources/templates/demo/prvgManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/resources/templates/demo/prvgManagement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system-web/src/main/resources/templates/demo/roleManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/resources/templates/demo/roleManagement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/shiro/MyShiroRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/shiro/MyShiroRealm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-web/target/classes/com/heihei/management/system/ServletInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/classes/com/heihei/management/system/ServletInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-web/target/classes/com/heihei/management/system/System.class" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/classes/com/heihei/management/system/System.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-web/target/classes/com/heihei/management/system/config/ShiroConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/classes/com/heihei/management/system/config/ShiroConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/system-web/target/classes/com/heihei/management/system/controller/DeptController.class" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/classes/com/heihei/management/system/controller/DeptController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-web/target/classes/com/heihei/management/system/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/classes/com/heihei/management/system/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-web/target/classes/com/heihei/management/system/controller/PersonalCenterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/classes/com/heihei/management/system/controller/PersonalCenterController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/system-web/target/classes/com/heihei/management/system/controller/PostController.class" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/classes/com/heihei/management/system/controller/PostController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-web/target/classes/com/heihei/management/system/controller/PrvgController.class" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/classes/com/heihei/management/system/controller/PrvgController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/system-web/target/classes/com/heihei/management/system/controller/RoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/classes/com/heihei/management/system/controller/RoleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system-web/target/classes/templates/demo/deptManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/classes/templates/demo/deptManagement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system-web/target/classes/templates/demo/postManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/classes/templates/demo/postManagement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system-web/target/classes/templates/demo/prvgManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/classes/templates/demo/prvgManagement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system-web/target/classes/templates/demo/roleManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/classes/templates/demo/roleManagement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-web/target/classes/com/heihei/management/system/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/classes/com/heihei/management/system/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-web/target/classes/com/heihei/management/system/shiro/MyShiroRealm.class" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/classes/com/heihei/management/system/shiro/MyShiroRealm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-web/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-web/target/system-web-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/system-web-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-web/target/system-web-1.0-SNAPSHOT.war.original" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/system-web-1.0-SNAPSHOT.war.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-web/target/system-web-1.0-SNAPSHOT/WEB-INF/classes/com/heihei/management/system/config/ShiroConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/system-web-1.0-SNAPSHOT/WEB-INF/classes/com/heihei/management/system/config/ShiroConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-web/target/system-web-1.0-SNAPSHOT/WEB-INF/classes/com/heihei/management/system/controller/DeptController.class" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/system-web-1.0-SNAPSHOT/WEB-INF/classes/com/heihei/management/system/controller/DeptController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-web/target/system-web-1.0-SNAPSHOT/WEB-INF/classes/com/heihei/management/system/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/system-web-1.0-SNAPSHOT/WEB-INF/classes/com/heihei/management/system/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-web/target/system-web-1.0-SNAPSHOT/WEB-INF/classes/com/heihei/management/system/controller/PersonalCenterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/system-web-1.0-SNAPSHOT/WEB-INF/classes/com/heihei/management/system/controller/PersonalCenterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-web/target/system-web-1.0-SNAPSHOT/WEB-INF/classes/com/heihei/management/system/controller/PostController.class" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/system-web-1.0-SNAPSHOT/WEB-INF/classes/com/heihei/management/system/controller/PostController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-web/target/system-web-1.0-SNAPSHOT/WEB-INF/classes/com/heihei/management/system/controller/PrvgController.class" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/system-web-1.0-SNAPSHOT/WEB-INF/classes/com/heihei/management/system/controller/PrvgController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-web/target/system-web-1.0-SNAPSHOT/WEB-INF/classes/com/heihei/management/system/controller/RoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/system-web-1.0-SNAPSHOT/WEB-INF/classes/com/heihei/management/system/controller/RoleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-web/target/system-web-1.0-SNAPSHOT/WEB-INF/classes/com/heihei/management/system/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/system-web-1.0-SNAPSHOT/WEB-INF/classes/com/heihei/management/system/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-web/target/system-web-1.0-SNAPSHOT/WEB-INF/classes/com/heihei/management/system/shiro/MyShiroRealm.class" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/system-web-1.0-SNAPSHOT/WEB-INF/classes/com/heihei/management/system/shiro/MyShiroRealm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-web/target/system-web-1.0-SNAPSHOT/WEB-INF/classes/templates/demo/deptManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/system-web-1.0-SNAPSHOT/WEB-INF/classes/templates/demo/deptManagement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-web/target/system-web-1.0-SNAPSHOT/WEB-INF/classes/templates/demo/postManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/system-web-1.0-SNAPSHOT/WEB-INF/classes/templates/demo/postManagement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-web/target/system-web-1.0-SNAPSHOT/WEB-INF/classes/templates/demo/prvgManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/system-web-1.0-SNAPSHOT/WEB-INF/classes/templates/demo/prvgManagement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-web/target/system-web-1.0-SNAPSHOT/WEB-INF/classes/templates/demo/roleManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/system-web-1.0-SNAPSHOT/WEB-INF/classes/templates/demo/roleManagement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-web/target/system-web-1.0-SNAPSHOT/WEB-INF/lib/system-common-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/system-web-1.0-SNAPSHOT/WEB-INF/lib/system-common-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-web/target/system-web-1.0-SNAPSHOT/WEB-INF/lib/system-dao-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/system-web-1.0-SNAPSHOT/WEB-INF/lib/system-dao-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-web/target/system-web-1.0-SNAPSHOT/WEB-INF/lib/system-entity-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/system-web-1.0-SNAPSHOT/WEB-INF/lib/system-entity-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system-web/target/system-web-1.0-SNAPSHOT/WEB-INF/lib/system-services-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/system-web-1.0-SNAPSHOT/WEB-INF/lib/system-services-1.0-SNAPSHOT.jar" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,6 +218,9 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
@@ -95,9 +238,11 @@
       <recent name="com.heihei.management.system.shiro" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Graduation project\system\system-web\src\main\java\com\heihei\management\system\service\impl" />
+      <recent name="D:\Graduation project\system\system-web\src\main\java\com\heihei\management\system\service" />
+      <recent name="D:\Graduation project\system\system-services\src\main\java\com\heihei\management\system\service\impl" />
+      <recent name="D:\Graduation project\system\system-services\src\main\java\com\heihei\management\system\service" />
       <recent name="D:\Graduation project\system\system-web\src\main\resources" />
-      <recent name="D:\Graduation project\system\system-web\src\main\java\com\heihei\management\system" />
-      <recent name="E:\Graduation project\system\src\main\resources\static\demo\css" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -202,7 +347,7 @@
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
               <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@109b6745" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@d3b5bb1e" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@65aca328" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
           </expand>
           <select />
