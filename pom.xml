@@ -8,10 +8,7 @@
   <artifactId>System</artifactId>
   <version>1.0-SNAPSHOT</version>
   <modules>
-    <module>system-entity</module>
     <module>system-common</module>
-    <module>system-dao</module>
-    <module>system-services</module>
     <module>system-web</module>
   </modules>
   <packaging>pom</packaging>

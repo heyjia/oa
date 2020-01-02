@@ -1,9 +1,9 @@
 package com.heihei.management.system.controller;
 
-import com.heihei.management.system.entity.database.ImportResult;
-import com.heihei.management.system.entity.database.PrivilegeDO;
-import com.heihei.management.system.entity.database.RoleDO;
-import com.heihei.management.system.entity.database.UserDO;
+import com.heihei.management.system.entity.ImportResult;
+import com.heihei.management.system.entity.PrivilegeDO;
+import com.heihei.management.system.entity.RoleDO;
+import com.heihei.management.system.entity.UserDO;
 import com.heihei.management.system.entity.form.AddRoleForm;
 import com.heihei.management.system.entity.vo.RolePrvgVO;
 import com.heihei.management.system.entity.vo.RoleVO;
@@ -29,7 +29,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.management.relation.Role;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;

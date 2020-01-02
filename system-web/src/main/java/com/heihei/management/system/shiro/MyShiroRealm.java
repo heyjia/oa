@@ -1,9 +1,9 @@
 package com.heihei.management.system.shiro;
 
 
-import com.heihei.management.system.entity.database.PrivilegeDO;
-import com.heihei.management.system.entity.database.RoleDO;
-import com.heihei.management.system.entity.database.UserDO;
+import com.heihei.management.system.entity.PrivilegeDO;
+import com.heihei.management.system.entity.RoleDO;
+import com.heihei.management.system.entity.UserDO;
 import com.heihei.management.system.service.PrivilegeService;
 import com.heihei.management.system.service.RoleService;
 import com.heihei.management.system.service.UserService;
