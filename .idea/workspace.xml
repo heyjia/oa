@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4f939baa-3b89-4c67-951b-55aa6ba9c241" name="Default Changelist" comment="qi">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/controller/DeptController.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/controller/DeptController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/controller/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/controller/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/java/com/heihei/management/system/controller/RoleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system-web/src/main/resources/templates/demo/deptManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/resources/templates/demo/deptManagement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system-web/src/main/resources/templates/demo/postManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/resources/templates/demo/postManagement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system-web/src/main/resources/templates/demo/prvgManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/resources/templates/demo/prvgManagement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system-web/src/main/resources/templates/demo/roleManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/src/main/resources/templates/demo/roleManagement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system-web/target/classes/com/heihei/management/system/controller/DeptController.class" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/classes/com/heihei/management/system/controller/DeptController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system-web/target/classes/com/heihei/management/system/controller/PostController.class" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/classes/com/heihei/management/system/controller/PostController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system-web/target/classes/com/heihei/management/system/controller/RoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/classes/com/heihei/management/system/controller/RoleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system-web/target/classes/templates/demo/deptManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/classes/templates/demo/deptManagement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system-web/target/classes/templates/demo/postManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/classes/templates/demo/postManagement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system-web/target/classes/templates/demo/prvgManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/classes/templates/demo/prvgManagement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system-web/target/classes/templates/demo/roleManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/system-web/target/classes/templates/demo/roleManagement.html" afterDir="false" />
-    </list>
+    <list default="true" id="4f939baa-3b89-4c67-951b-55aa6ba9c241" name="Default Changelist" comment="qi" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +186,7 @@
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
               <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@109b6745" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@d3b5bb1e" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@65aca328" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
           </expand>
           <select />
