@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4f939baa-3b89-4c67-951b-55aa6ba9c241" name="Default Changelist" comment="qi" />
+    <list default="true" id="4f939baa-3b89-4c67-951b-55aa6ba9c241" name="Default Changelist" comment="qi">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/controller/DeptController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/controller/DeptController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/controller/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/controller/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/controller/RoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/demo/deptManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/demo/deptManagement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/demo/postManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/demo/postManagement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/demo/prvgManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/demo/prvgManagement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/demo/roleManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/demo/roleManagement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/controller/DeptController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/controller/DeptController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/controller/PostController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/controller/PostController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/controller/RoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/controller/RoleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/demo/deptManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/demo/deptManagement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/demo/postManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/demo/postManagement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/demo/prvgManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/demo/prvgManagement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/demo/roleManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/demo/roleManagement.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +70,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="D:/project/秒杀项目" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates/demo" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -66,8 +82,12 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Graduation project\system\src\main\resources\static\demo\css" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Graduation project\system\src\main\resources\templates\demo" />
+      <recent name="E:\Graduation project\system\src\main\resources\templates\demo" />
+      <recent name="E:\Graduation project\system\src\main\resources\static\demo\js" />
+      <recent name="E:\Graduation project\system\src\main\resources\templates\include" />
+      <recent name="E:\Graduation project\system\src\main\resources\static\demo" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.heihei.management.system.dao" />
@@ -75,12 +95,8 @@
       <recent name="com.heihei.management.system.config" />
       <recent name="com.heihei.management.system.shiro" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Graduation project\system\src\main\resources\templates\demo" />
-      <recent name="E:\Graduation project\system\src\main\resources\static\demo\js" />
-      <recent name="E:\Graduation project\system\src\main\resources\templates\include" />
-      <recent name="E:\Graduation project\system\src\main\resources\static\demo" />
-      <recent name="E:\Graduation project\system\src\main\java\com\heihei\management\system\service" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Graduation project\system\src\main\resources\static\demo\css" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -185,7 +201,7 @@
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
               <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@2fad28fb" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@6227bf7d" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@6db730a5" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
           </expand>
           <select />

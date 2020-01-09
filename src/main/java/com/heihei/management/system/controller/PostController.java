@@ -1,5 +1,6 @@
 package com.heihei.management.system.controller;
 
+import com.heihei.management.system.entity.ImportResult;
 import com.heihei.management.system.entity.PositionDO;
 import com.heihei.management.system.entity.UserDO;
 import com.heihei.management.system.entity.form.AddPostForm;
@@ -7,6 +8,11 @@ import com.heihei.management.system.result.CodeMsg;
 import com.heihei.management.system.result.Result;
 import com.heihei.management.system.service.PostService;
 import com.heihei.management.system.util.ExcelUtil;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.Row;
 import org.apache.shiro.SecurityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,10 +21,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -164,5 +173,73 @@ public class PostController {
         String sheetName = "岗位列表";
         String fileName = "post.xls";
         ExcelUtil.exportExcel(response,data,sheetName,fileName,20);
+    }
+
+    @RequestMapping (value = "/downModal")
+    public void downModal(HttpServletResponse response,UserDO user) throws IOException {
+        List<List<String>> data = new ArrayList<>();
+        List<String> head = new ArrayList<>();
+        head.add("岗位名");
+        head.add("描述");
+        data.add(head);
+        List<String> row = new ArrayList<>();
+        row.add("XXX");
+        row.add("");
+        data.add(row);
+        String sheetName = "岗位列表";
+        String fileName = "position.xls";
+        ExcelUtil.exportExcel(response,data,sheetName,fileName,20);
+    }
+
+    @RequestMapping("/importData")
+    @ResponseBody
+    public Result<ImportResult> importData(@RequestParam("file") MultipartFile file, HttpServletResponse response, UserDO user) {
+        logger.info("进入批量导入岗位的方法");
+        HSSFWorkbook workbook = null;
+        int addCount = 0;
+        int updateCount = 0;
+        try {
+            InputStream is = file.getInputStream();
+            workbook = new HSSFWorkbook(is);
+            HSSFSheet sheet = workbook.getSheetAt(0);
+            int rows = sheet.getPhysicalNumberOfRows();
+            int columns = 0;
+            for (int r = 0; r < rows; r++) {
+                if (r == 0) {
+                    columns = sheet.getRow(r).getLastCellNum();
+                    continue;
+                }
+                String name = "";
+                String describe = "";
+                Row row = sheet.getRow(r);
+                PositionDO position = new PositionDO();
+                if (row != null) {
+                    Cell cellName = row.getCell(0);
+                    cellName.setCellType(CellType.STRING);
+                    name = cellName.getStringCellValue();
+                    Cell cellDesb = row.getCell(1);
+                    cellDesb.setCellType(CellType.STRING);
+                    describe = cellDesb.getStringCellValue();
+                    //根据岗位名查询岗位是否存在
+                    PositionDO post = postService.getPostByPostName(name);
+                    if (post != null) {
+                        post.setDescribe(describe);
+                        post.setUpdtTime(new Date());
+                        postService.updatePostByForm(post);
+                        updateCount++;
+                    }else{
+                        position.setName(name);
+                        position.setDescribe(describe);
+                        position.setCrtTime(new Date());
+                        position.setUpdtTime(new Date());
+                        postService.addPost(position);
+                        addCount++;
+                    }
+                }
+            }
+        } catch (IOException e) {
+            Result.success(CodeMsg.READ_FILE_ERRPE);
+        }
+        return Result.success(new ImportResult(addCount,updateCount));
     }
 }
