@@ -11,6 +11,9 @@ public class CodeMsg {
 
     private int code;
     private String msg;
+
+    public static CodeMsg IP_ERROR = new CodeMsg(99999,"同个账户在不同地点同时登录，请检查账号异常");
+
     //登录模块
     public static CodeMsg PASSWORD_ERROR = new CodeMsg(10001,"密码错误");
     public static CodeMsg UNKNOWACCOUNT = new CodeMsg(10002,"用户不存在");

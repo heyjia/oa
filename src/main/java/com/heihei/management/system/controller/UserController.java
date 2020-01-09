@@ -59,7 +59,7 @@ public class UserController {
     Logger logger = LoggerFactory.getLogger(UserController.class);
 
     @RequestMapping(value = "/toUserManagement")
-    public String toUserManagement(Model model){
+    public String toUserManagement(Model model,UserDO user){
         logger.info("进入toUserManagement方法");
         List<UserListVO> userList = userService.listUser();
         List<RoleDO> roles = roleService.selectRoles();
@@ -67,14 +67,13 @@ public class UserController {
         model.addAttribute("users",userList);
         model.addAttribute("roles",roles);
         model.addAttribute("depts",depts);
-        UserDO user = (UserDO)SecurityUtils.getSubject().getSession().getAttribute("userSession");
         model.addAttribute("u",user);
         return "demo/userManagement";
     }
     //删除用户的请求
     @RequestMapping(value="/delete/{userId}")
     @ResponseBody
-    public Result<Boolean> deleteUser(@PathVariable("userId") int userId){
+    public Result<Boolean> deleteUser(@PathVariable("userId") int userId,UserDO user){
         logger.info("删除用户");
         boolean result = userService.deleteUser(userId);
         if (result == false) {
@@ -86,7 +85,7 @@ public class UserController {
 
     //用户管理，根据输入的信息，模糊用户名查询相关用户信息
     @RequestMapping(value = "/selectUserByTip/{selectTip}")
-    public String selectUserByTip(Model model , @PathVariable("selectTip") String selectTip) {
+    public String selectUserByTip(Model model , @PathVariable("selectTip") String selectTip,UserDO user) {
         logger.info("模糊查询树");
         List<UserListVO> userList = userService.selectAllUserByTip(selectTip);
         List<RoleDO> roles = roleService.selectRoles();
@@ -94,14 +93,13 @@ public class UserController {
         model.addAttribute("users",userList);
         model.addAttribute("roles",roles);
         model.addAttribute("depts",depts);
-        UserDO user = (UserDO)SecurityUtils.getSubject().getSession().getAttribute("userSession");
         model.addAttribute("u",user);
         return "demo/userManagement";
     }
 
     @ResponseBody
     @RequestMapping(value = "/getPost")
-    public List<PositionDO> getPost(@RequestParam int deptId){
+    public List<PositionDO> getPost(@RequestParam int deptId,UserDO user){
         List<PositionDO> positions = postService.listPostByDeptId(deptId);
         return positions;
     }
@@ -109,7 +107,7 @@ public class UserController {
     //注册请求，获取表单中的注册信息，将表单的信息封装成一个user，判断用户是否存在，然后事务添加用户以及其角色 默认User角色
     @RequestMapping (value = "/addUser")
     @ResponseBody
-    public Result<Boolean> addUSer(AddUserForm addUserForm){
+    public Result<Boolean> addUSer(AddUserForm addUserForm,UserDO u){
         logger.info("注册");
         logger.info(addUserForm.toString());
         UserDO user = userService.getOnlyUserByUserName(addUserForm.getName());
@@ -125,14 +123,14 @@ public class UserController {
 
     @RequestMapping(value = "/selectUserByUserId/{userId}")
     @ResponseBody
-    public UserListVO selectUserByUserId(@PathVariable("userId") int userId) {
+    public UserListVO selectUserByUserId(@PathVariable("userId") int userId,UserDO u) {
         UserListVO user = userService.getUserByUserId(userId);
         return user;
     }
 
     @RequestMapping(value = "/alertUser")
     @ResponseBody
-    public Result<Boolean> alertUser(UpdateUserForm updateUserForm){
+    public Result<Boolean> alertUser(UpdateUserForm updateUserForm,UserDO user){
         logger.info("进入编辑用户方法");
         logger.info(updateUserForm.toString());
         boolean result = userService.updateUser(updateUserForm);
@@ -144,7 +142,7 @@ public class UserController {
 
     @RequestMapping(value = "/getCount")
     @ResponseBody
-    public Result<Integer> getCount(){
+    public Result<Integer> getCount(UserDO user){
         logger.info("获取所有用户的条数");
         int num = userService.countUser();
         logger.info("用户的条数："+num);
@@ -154,7 +152,7 @@ public class UserController {
     //删除用户的请求
     @RequestMapping(value="/batchBatch")
     @ResponseBody
-    public Result<Boolean> deleteUser(String ids) {
+    public Result<Boolean> deleteUser(String ids,UserDO user) {
         logger.info("批量删除用户，为"+ids);
         String[] strs = ids.split(",");
         for (int i = 0; i < strs.length;i++) {
@@ -169,7 +167,7 @@ public class UserController {
 
     //导出所有的数据
     @RequestMapping (value = "/download")
-    public void excelDownload(HttpServletResponse response) throws IOException {
+    public void excelDownload(HttpServletResponse response,UserDO u) throws IOException {
         List<List<String>> data = new ArrayList<>();
         List<String> head = new ArrayList<>();
         //ExcelData excel = new ExcelData();

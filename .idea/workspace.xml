@@ -2,40 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f939baa-3b89-4c67-951b-55aa6ba9c241" name="Default Changelist" comment="qi">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/entity/ImportResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/config/UserConfigurationResolver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/interceptor/IPInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/interceptor/InterceptorConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/redis/BaseKeyPerfix.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/redis/IPKeyPerfix.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/redis/JedisPoolSingleton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/redis/KeyPerfix.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/redis/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/redis/RedisService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/redis/UserKeyPerfix.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/util/IPUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/util/JsonUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/util/UserCookieUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/controller/DeptController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/controller/DeptController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/controller/PersonalCenterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/controller/PersonalCenterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/controller/PostController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/controller/PrvgController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/controller/PrvgController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/dao/PrivilegeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/dao/PrivilegeDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/controller/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/controller/RoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/result/CodeMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/result/CodeMsg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/service/PrivilegeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/service/PrivilegeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/service/impl/PrivilegeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heihei/management/system/service/impl/PrivilegeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/demo/prvgManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/demo/prvgManagement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/dao/PrivilegeDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/dao/PrivilegeDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/demo/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/demo/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/controller/DeptController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/controller/DeptController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/controller/PersonalCenterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/controller/PersonalCenterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/controller/PostController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/controller/PostController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/controller/PrvgController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/controller/PrvgController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/controller/RoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/controller/RoleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/controller/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/result/CodeMsg.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/result/CodeMsg.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/PrivilegeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/PrivilegeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/impl/PrivilegeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/heihei/management/system/service/impl/PrivilegeServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/demo/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/demo/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/demo/css/bootstrapValidator.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/demo/css/bootstrapValidator.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/demo/css/bootstrapstyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/demo/css/bootstrapstyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/demo/css/config.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/demo/css/config.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/demo/css/font-awesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/demo/css/font-awesome.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/demo/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/demo/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/demo/css/jquery.pagination.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/demo/css/jquery.pagination.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/demo/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/demo/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/demo/fonts/glyphicons-halflings-regular.svg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/demo/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/demo/js/bootstrap-select.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/demo/js/bootstrap-select.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/demo/js/bootstrap-treeview.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/demo/js/bootstrap-treeview.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/demo/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/demo/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/demo/js/bootstrapValidator.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/demo/js/bootstrapValidator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/demo/js/jquery-3.3.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/demo/js/jquery-3.3.1.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/demo/js/jquery.slimscroll.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/demo/js/jquery.slimscroll.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/demo/js/jquery.ztree.core.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/demo/js/jquery.ztree.core.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/demo/js/jquery.ztree.excheck.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/demo/js/jquery.ztree.excheck.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/demo/js/jquery.ztree.exedit.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/demo/js/jquery.ztree.exedit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/demo/js/modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/demo/js/modal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/demo/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/demo/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/demo/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/demo/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/demo/personalCenter.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/demo/personalCenter.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,8 +50,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="Interface" />
         <option value="HTML File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -71,6 +74,7 @@
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="importAutomatically" value="true" />
+        <option name="jdkForImporter" value="1.8" />
         <option name="vmOptionsForImporter" value="-Xmx768m" />
       </MavenImportingSettings>
     </option>
@@ -80,6 +84,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
@@ -87,7 +92,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="D:/GitProject/ruoyi" />
+    <property name="last_opened_file_path" value="D:/project/秒杀项目" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -95,15 +100,12 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Graduation project\system\src\main\resources\templates\demo" />
-      <recent name="E:\Graduation project\system\src\main\resources\static\demo\js" />
-      <recent name="E:\Graduation project\system\src\main\resources\templates\include" />
-      <recent name="E:\Graduation project\system\src\main\resources\static\demo" />
-      <recent name="E:\Graduation project\system\src\main\java\com\heihei\management\system\service" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Graduation project\system\src\main\resources\static\demo\css" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.heihei.management.system.dao" />
@@ -111,8 +113,12 @@
       <recent name="com.heihei.management.system.config" />
       <recent name="com.heihei.management.system.shiro" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Graduation project\system\src\main\resources\static\demo\css" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Graduation project\system\src\main\resources\templates\demo" />
+      <recent name="E:\Graduation project\system\src\main\resources\static\demo\js" />
+      <recent name="E:\Graduation project\system\src\main\resources\templates\include" />
+      <recent name="E:\Graduation project\system\src\main\resources\static\demo" />
+      <recent name="E:\Graduation project\system\src\main\java\com\heihei\management\system\service" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -212,12 +218,12 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@109b6745" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@2fad28fb" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@109b6745" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@d3b5bb1e" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@2fad28fb" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@6db730a5" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
           </expand>
           <select />
@@ -245,6 +251,7 @@
       <workItem from="1577668657632" duration="4653000" />
       <workItem from="1577715596518" duration="10299000" />
       <workItem from="1577862488587" duration="6980000" />
+      <workItem from="1578530843793" duration="29776000" />
     </task>
     <servers />
   </component>
@@ -263,5 +270,19 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/heihei/management/system/config/UserConfigurationResolver.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

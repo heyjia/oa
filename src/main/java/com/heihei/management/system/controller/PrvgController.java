@@ -45,34 +45,32 @@ public class PrvgController {
     @Autowired
     PrivilegeService privilegeService;
     @RequestMapping(value = "toPrvg")
-    public String toPrvg(Model model) {
+    public String toPrvg(Model model,UserDO user) {
         List<PrivilegeDO> privileges = privilegeService.listPrivilege();
             for (int i = 0;i < privileges.size();i++){
             logger.info(privileges.get(i).toString());
         }
         model.addAttribute("prvgs",privileges);
-        UserDO user = (UserDO) SecurityUtils.getSubject().getSession().getAttribute("userSession");
         model.addAttribute("u",user);
         return "demo/prvgManagement";
     }
 
     //模糊查询岗位
     @RequestMapping(value = "/selectPrvgByTip/{selectTip}")
-    public String selectPrvgByTip(Model model , @PathVariable("selectTip") String selectTip) {
+    public String selectPrvgByTip(Model model , @PathVariable("selectTip") String selectTip,UserDO user) {
         logger.info("模糊查询权限" + selectTip);
         List<PrivilegeDO> privileges = privilegeService.selectPostByTip(selectTip);
         for (int i = 0;i < privileges.size();i++) {
             logger.info(privileges.get(i).toString());
         }
         model.addAttribute("prvgs",privileges);
-        UserDO user = (UserDO) SecurityUtils.getSubject().getSession().getAttribute("userSession");
         model.addAttribute("u",user);
         return "demo/prvgManagement";
     }
     //添加权限
     @RequestMapping(value = "/addPrvg")
     @ResponseBody
-    public Result<Boolean> addPrvg(PrivilegeDO privilegeDO) {
+    public Result<Boolean> addPrvg(PrivilegeDO privilegeDO,UserDO user) {
         PrivilegeDO privilege = privilegeService.getPrvgByPrvgName(privilegeDO.getName());
         if (privilege != null) {
             return  Result.error(CodeMsg.PRIVILEGE_EXISTED);
@@ -86,7 +84,7 @@ public class PrvgController {
     //删除权限
     @RequestMapping(value="/delete/{prvgId}")
     @ResponseBody
-    public Result<Boolean> deletePrvg(@PathVariable("prvgId") int prvgId){
+    public Result<Boolean> deletePrvg(@PathVariable("prvgId") int prvgId,UserDO user){
         logger.info("删除权限");
         //删除权限和角色的联系
         privilegeService.deletePrvgRoleByPrvgId(prvgId);
@@ -101,7 +99,7 @@ public class PrvgController {
     //根据权限id查询权限为了回显
     @RequestMapping(value="/selectPrvgByPrvgId/{prvgId}")
     @ResponseBody
-    public PrivilegeDO selectPrvgByPrvgId(@PathVariable("prvgId") int prvgId){
+    public PrivilegeDO selectPrvgByPrvgId(@PathVariable("prvgId") int prvgId,UserDO user){
         logger.info("查询权限");
         PrivilegeDO prvg = privilegeService.selectPrvgByPrvgId(prvgId);
         return prvg;
@@ -110,7 +108,7 @@ public class PrvgController {
     //修改权限
     @RequestMapping(value = "/editPrvg")
     @ResponseBody
-    public Result<Boolean> editPrvg(PrivilegeDO privilegeDO) {
+    public Result<Boolean> editPrvg(PrivilegeDO privilegeDO,UserDO user) {
         logger.info("editPrvg");
         PrivilegeDO privilege = privilegeService.getPrvgByPrvgName(privilegeDO.getName());
         if (privilege != null && privilege.getId() != privilegeDO.getId()) {
@@ -125,7 +123,7 @@ public class PrvgController {
     //批量删除权限batchBatch
     @RequestMapping(value="/batchBatch")
     @ResponseBody
-    public Result<Boolean> batchBatch(String ids) {
+    public Result<Boolean> batchBatch(String ids,UserDO user) {
         logger.info("批量删除权限，为"+ids);
         String[] strs = ids.split(",");
         for (int i = 0; i < strs.length;i++) {
@@ -139,7 +137,7 @@ public class PrvgController {
     }
 
     @RequestMapping("/download")
-    public void ExcelDownload(HttpServletResponse response) throws IOException {
+    public void ExcelDownload(HttpServletResponse response,UserDO user) throws IOException {
         List<List<String>> data = new ArrayList<>();
         List<String> head = new ArrayList<>();
         head.add("权限名");
@@ -159,7 +157,7 @@ public class PrvgController {
 
     @RequestMapping("/importData")
     @ResponseBody
-    public Result<ImportResult> importData(@RequestParam("file") MultipartFile file, HttpServletResponse response, HttpServletRequest request) {
+    public Result<ImportResult> importData(@RequestParam("file") MultipartFile file, HttpServletResponse response, HttpServletRequest request,UserDO user) {
         logger.info("进入批量导入权限的方法");
         HSSFWorkbook workbook = null;
         int addCount = 0;
@@ -207,7 +205,7 @@ public class PrvgController {
     }
 
     @RequestMapping (value = "/downModal")
-    public void downModal(HttpServletResponse response) throws IOException {
+    public void downModal(HttpServletResponse response,UserDO user) throws IOException {
         List<List<String>> data = new ArrayList<>();
         List<String> head = new ArrayList<>();
         head.add("权限名");

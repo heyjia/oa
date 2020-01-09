@@ -10,6 +10,10 @@
         <module name="system" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="system-common" target="1.8" />
+      <module name="system-web" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">

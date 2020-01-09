@@ -43,7 +43,7 @@ public class RoleController {
     PrivilegeService privilegeService;
     //查询角色列表
     @RequestMapping(value = "/toRole")
-    public String toRole(Model model){
+    public String toRole(Model model,UserDO user){
         List<RoleDO> roles = roleService.selectRoles();
         List<RoleVO> roleVos = new ArrayList<>();
         for (RoleDO role : roles) {
@@ -54,7 +54,6 @@ public class RoleController {
             roleVos.add(v);
         }
         model.addAttribute("roleVos",roleVos);
-        UserDO user = (UserDO) SecurityUtils.getSubject().getSession().getAttribute("userSession");
         model.addAttribute("u",user);
         List<PrivilegeDO> prvgs = privilegeService.listPrivilege();
         for (int i = 0;i < prvgs.size();i++) {
@@ -68,7 +67,7 @@ public class RoleController {
 
     //模糊查询岗位
     @RequestMapping(value = "/selectRoleByTip/{selectTip}")
-    public String selectRoleByTip(Model model , @PathVariable("selectTip") String selectTip) {
+    public String selectRoleByTip(Model model , @PathVariable("selectTip") String selectTip,UserDO user) {
         logger.info("模糊查询角色" + selectTip);
         List<RoleDO> roles = roleService.selectRoleByTip(selectTip);
         List<RoleVO> roleVos = new ArrayList<>();
@@ -80,7 +79,6 @@ public class RoleController {
             roleVos.add(v);
         }
         model.addAttribute("roleVos",roleVos);
-        UserDO user = (UserDO) SecurityUtils.getSubject().getSession().getAttribute("userSession");
         model.addAttribute("u",user);
         List<PrivilegeDO> prvgs = privilegeService.listPrivilege();
         for (int i = 0;i < prvgs.size();i++) {
@@ -92,7 +90,7 @@ public class RoleController {
     //删除角色
     @RequestMapping(value="/delete/{roleId}")
     @ResponseBody
-    public Result<Boolean> deletePrvg(@PathVariable("roleId") int roleId){
+    public Result<Boolean> deletePrvg(@PathVariable("roleId") int roleId,UserDO user){
         logger.info("删除角色");
         //删除权限和角色的联系
         privilegeService.deletePrvgRoleByRoleId(roleId);
@@ -107,7 +105,7 @@ public class RoleController {
     //批量删除角色
     @RequestMapping(value="/batchDelete")
     @ResponseBody
-    public Result<Boolean> batchDelete(String ids) {
+    public Result<Boolean> batchDelete(String ids,UserDO user) {
         logger.info("批量删除角色，为"+ids);
         String[] strs = ids.split(",");
         for (int i = 0; i < strs.length;i++) {
@@ -127,7 +125,7 @@ public class RoleController {
     //添加部门请求
     @RequestMapping(value = "/addRole")
     @ResponseBody
-    public Result<Boolean> addRole(AddRoleForm addRoleForm){
+    public Result<Boolean> addRole(AddRoleForm addRoleForm,UserDO user){
         logger.info("添加角色请求addRole");
         logger.info("AddRoleForm:"+addRoleForm.toString());
         //添加角色
@@ -159,7 +157,7 @@ public class RoleController {
     //获取单个部门信息的请求
     @RequestMapping(value = "/selectRoleByRoleId/{roleId}")
     @ResponseBody
-    public RolePrvgVO selectRoleByRoleId(@PathVariable("roleId") int roleId){
+    public RolePrvgVO selectRoleByRoleId(@PathVariable("roleId") int roleId,UserDO user){
         RolePrvgVO rolePrvgVO = new RolePrvgVO();
         rolePrvgVO.setRole(roleService.getRoleById(roleId));
         rolePrvgVO.setPrvgs(privilegeService.listPrivilegeByRoleId(roleId));
@@ -169,7 +167,7 @@ public class RoleController {
     //编辑角色editRole
     @RequestMapping(value = "/editRole")
     @ResponseBody
-    public Result<Boolean> editRole(AddRoleForm addRoleForm){
+    public Result<Boolean> editRole(AddRoleForm addRoleForm,UserDO user){
         logger.info("编辑角色请求updateDept");
         logger.info("addRoleForm:"+addRoleForm.toString());
         RoleDO role = roleService.getRoleByName(addRoleForm.getRoleName());
@@ -199,7 +197,7 @@ public class RoleController {
     }
 
     @RequestMapping(value = "/download")
-    public void excelDownload(HttpServletResponse response) throws IOException {
+    public void excelDownload(HttpServletResponse response,UserDO user) throws IOException {
         List<List<String>> data = new ArrayList<>();
         List<String> head = new ArrayList<>();
         head.add("角色名");

@@ -96,7 +96,12 @@
                                 layer.msg("登录成功");
                                 //location.href="/login/show";
                                 location.href="/login/toIndex";
-                            }else{
+                            }
+                            if(data.code == 99999) {
+                                layer.alert(data.msg,function () {
+                                    window.location.href = "/login/toLogin";
+                                });
+                            }else {
                                 layer.alert(data.msg);
                             }
                         },

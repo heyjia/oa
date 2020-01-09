@@ -37,30 +37,28 @@ public class PostController {
     @Autowired
     PostService postService;
     @RequestMapping (value = "/toPostManagement")
-    public String toPostManagement(Model model){
+    public String toPostManagement(Model model,UserDO user){
         List<PositionDO> positions = postService.listPost();
         model.addAttribute("positions",positions);
-        UserDO user = (UserDO)SecurityUtils.getSubject().getSession().getAttribute("userSession");
         model.addAttribute("u",user);
         return "demo/postManagement";
     }
     //模糊查询岗位
     @RequestMapping(value = "/selectPostByTip/{selectTip}")
-    public String selectPostByTip(Model model , @PathVariable("selectTip") String selectTip) {
+    public String selectPostByTip(Model model , @PathVariable("selectTip") String selectTip,UserDO user) {
         logger.info("模糊查询岗位" + selectTip);
         List<PositionDO> positions = postService.selectPostByTip(selectTip);
         for (int i = 0;i < positions.size();i++) {
             logger.info(positions.get(i).toString());
         }
         model.addAttribute("positions",positions);
-        UserDO user = (UserDO) SecurityUtils.getSubject().getSession().getAttribute("userSession");
         model.addAttribute("u",user);
         return "demo/postManagement";
     }
     //添加部门
     @RequestMapping(value = "/addPost")
     @ResponseBody
-    public Result<Boolean> addPost(AddPostForm addPostForm) {
+    public Result<Boolean> addPost(AddPostForm addPostForm,UserDO user) {
         PositionDO post = postService.getPostByPostName(addPostForm.getPostName());
         if (post != null) {
             return  Result.error(CodeMsg.POSITION_EXISTED);
@@ -79,7 +77,7 @@ public class PostController {
     //删除岗位
     @RequestMapping(value="/delete/{postId}")
     @ResponseBody
-    public Result<Boolean> deletePost(@PathVariable("postId") int postId){
+    public Result<Boolean> deletePost(@PathVariable("postId") int postId,UserDO user){
         logger.info("删除岗位");
         //删除岗位和用户的联系
         postService.deleteUserPostByPostId(postId);
@@ -96,7 +94,7 @@ public class PostController {
     //修改岗位editPost
     @RequestMapping(value = "/editPost")
     @ResponseBody
-    public Result<Boolean> editPost(AddPostForm addPostForm) {
+    public Result<Boolean> editPost(AddPostForm addPostForm,UserDO user) {
         logger.info("editPost");
         PositionDO toUpdatePost = postService.getPostByPostId(addPostForm.getPostId());
         PositionDO post = postService.getPostByPostName(addPostForm.getPostName());
@@ -116,7 +114,7 @@ public class PostController {
     //根据岗位id查询岗位为了回显
     @RequestMapping(value="/selectPostByPostId/{postId}")
     @ResponseBody
-    public PositionDO selectPostByPostId(@PathVariable("postId") int postId){
+    public PositionDO selectPostByPostId(@PathVariable("postId") int postId,UserDO user){
         logger.info("查询岗位");
         PositionDO post = postService.getPostByPostId(postId);
         return post;
@@ -126,7 +124,7 @@ public class PostController {
     //批量删除岗位
     @RequestMapping(value="/batchBatch")
     @ResponseBody
-    public Result<Boolean> batchBatch(String ids) {
+    public Result<Boolean> batchBatch(String ids,UserDO user) {
         logger.info("批量删除岗位，为"+ids);
         String[] strs = ids.split(",");
         for (int i = 0; i < strs.length;i++) {
@@ -145,7 +143,7 @@ public class PostController {
     }
 
     @RequestMapping(value = "/download")
-    public void excelDownload(HttpServletResponse response) throws IOException {
+    public void excelDownload(HttpServletResponse response,UserDO user) throws IOException {
         List<List<String>> data = new ArrayList<>();
         List<String> head = new ArrayList<>();
         head.add("岗位名");

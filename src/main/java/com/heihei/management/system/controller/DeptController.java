@@ -46,14 +46,14 @@ public class DeptController {
     PostService postService;
     @RequestMapping(value = "/getTree")
     @ResponseBody
-    public List<TreeVO> getTree(Model model){
+    public List<TreeVO> getTree(Model model,UserDO user){
         List<TreeVO> trees = deptService.listDeptAsTree();
         model.addAttribute("tree",trees);
         return trees;
     }
     //查询所有的部门,并且跳转到所有部门的列表
     @RequestMapping(value = "/toDeptTree")
-    public String toDeptTree(Model model){
+    public String toDeptTree(Model model,UserDO user){
         logger.info("查询所有部门");
         //查询所有的部门
         List<DeptVO> depts = deptService.listDeptWithPDept();
@@ -63,13 +63,12 @@ public class DeptController {
         List<PositionDO> posts = postService.listPost();
         model.addAttribute("depts",depts);
         model.addAttribute("posts",posts);
-        UserDO user = (UserDO) SecurityUtils.getSubject().getSession().getAttribute("userSession");
         model.addAttribute("u",user);
         return "demo/deptManagement";
     }
     //模糊查询部门
     @RequestMapping(value = "/selectDeptByTip/{selectTip}")
-    public String selectDeptByTip(Model model , @PathVariable("selectTip") String selectTip) {
+    public String selectDeptByTip(Model model , @PathVariable("selectTip") String selectTip,UserDO user) {
         logger.info("模糊查询树" + selectTip);
         List<DeptVO> depts = deptService.selectDeptByTip(selectTip);
         for (int i = 0;i < depts.size();i++) {
@@ -78,7 +77,6 @@ public class DeptController {
         List<PositionDO> posts = postService.listPost();
         model.addAttribute("depts",depts);
         model.addAttribute("posts",posts);
-        UserDO user = (UserDO)SecurityUtils.getSubject().getSession().getAttribute("userSession");
         model.addAttribute("u",user);
         return "demo/deptManagement";
     }
@@ -86,7 +84,7 @@ public class DeptController {
     //删除部门的请求
     @RequestMapping(value="/delete/{deptId}")
     @ResponseBody
-    public Result<Boolean> deleteDept(@PathVariable("deptId") int deptId){
+    public Result<Boolean> deleteDept(@PathVariable("deptId") int deptId,UserDO user){
         logger.info("删除部门deleteDept");
         int item = deptService.deleteDept(deptId);
         logger.info(item+"");
@@ -100,7 +98,7 @@ public class DeptController {
     //添加部门请求
     @RequestMapping(value = "/addDept")
     @ResponseBody
-    public Result<Boolean> addDept(AddDeptForm addDeptForm){
+    public Result<Boolean> addDept(AddDeptForm addDeptForm,UserDO user){
         logger.info("添加部门请求addDept");
         logger.info("postIds:"+addDeptForm.toString());
         logger.info("postId:" + addDeptForm.getPostIds());
@@ -137,7 +135,7 @@ public class DeptController {
     //获取单个部门信息的请求
     @RequestMapping(value = "/selectDeptByDeptId/{deptId}")
     @ResponseBody
-    public DeptAndPostVO selectDeptByDeptId(@PathVariable("deptId") int deptId){
+    public DeptAndPostVO selectDeptByDeptId(@PathVariable("deptId") int deptId,UserDO user){
         DeptAndPostVO deptAndPst = new DeptAndPostVO();
         deptAndPst.setDept(deptService.selectDeptByDeptId(deptId));
         deptAndPst.setPosts(postService.listPostByDeptId(deptId));
@@ -146,22 +144,21 @@ public class DeptController {
 
     //树点击获取单个部门信息的请求
     @RequestMapping(value = "/getDeptByDeptId/{deptId}")
-    public String getDeptByDeptId(@PathVariable("deptId") int deptId,Model model){
+    public String getDeptByDeptId(@PathVariable("deptId") int deptId,Model model,UserDO u){
         logger.info("获取单个部门信息的请求selectDeptByDeptId");
         DeptVO dept = deptService.getDeptByDeptId(deptId);
         logger.info("dept:" + dept.toString());
         model.addAttribute("depts",dept);
         List<PositionDO> posts = postService.listPost();
         model.addAttribute("posts",posts);
-        UserDO user = (UserDO)SecurityUtils.getSubject().getSession().getAttribute("userSession");
-        model.addAttribute("u",user);
+        model.addAttribute("u",u);
         return "demo/deptManagement";
     }
 
     //编辑部门请求
     @RequestMapping(value = "/updateDept")
     @ResponseBody
-    public Result<Boolean> updateDept(AddDeptForm addDeptForm){
+    public Result<Boolean> updateDept(AddDeptForm addDeptForm,UserDO user){
         logger.info("编辑部门请求updateDept");
         logger.info("postIds:"+addDeptForm.toString());
         DepartmentDO dept = new DepartmentDO();
@@ -192,11 +189,9 @@ public class DeptController {
     }
 
     //batchBatch批量删除部门
-
-    //删除用户的请求
     @RequestMapping(value="/batchBatch")
     @ResponseBody
-    public Result<Boolean> batchBatch(String ids) {
+    public Result<Boolean> batchBatch(String ids,UserDO user) {
         logger.info("批量删除部门，为"+ids);
         String[] strs = ids.split(",");
         for (int i = 0; i < strs.length;i++) {
@@ -210,7 +205,7 @@ public class DeptController {
     }
 
     @RequestMapping(value = "/download")
-    public void excelDownload(HttpServletResponse response) throws IOException {
+    public void excelDownload(HttpServletResponse response,UserDO user) throws IOException {
         List<List<String>> data = new ArrayList<>();
         List<String> head = new ArrayList<>();
         head.add("部门名");

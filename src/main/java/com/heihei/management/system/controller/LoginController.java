@@ -1,9 +1,14 @@
 package com.heihei.management.system.controller;
 
 import com.heihei.management.system.entity.UserDO;
+import com.heihei.management.system.redis.IPKeyPerfix;
+import com.heihei.management.system.redis.RedisService;
+import com.heihei.management.system.redis.UserKeyPerfix;
 import com.heihei.management.system.result.CodeMsg;
 import com.heihei.management.system.result.Result;
+import com.heihei.management.system.util.IPUtil;
 import com.heihei.management.system.util.RSAUtil;
+import com.heihei.management.system.util.UserCookieUtil;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
@@ -18,6 +23,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 /**
  * LoginController
  * @Description      登录controller
@@ -29,10 +38,15 @@ import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 public class LoginController {
     @Autowired
     ThymeleafViewResolver thymleafViewResolver;
+    @Autowired
+    UserCookieUtil userCookieUtil;
+    @Autowired
+    RedisService redisService;
     Logger logger = LoggerFactory.getLogger(LoginController.class);
     // 拦截用户请求，跳转到登录页面
-    @RequestMapping("/")
+    @RequestMapping("/test")
     public String test() {
+//        redisService.set("b",2);
         return "demo/login";
     }
     @RequestMapping("/toLogin")
@@ -43,7 +57,7 @@ public class LoginController {
     // 拦截用户登录请求，用shiro进行认证，判断用户是否存在以及用户密码是否正确
     @RequestMapping(value = "/doLogin")
     @ResponseBody
-    public Result<Boolean> doLogin(@RequestParam(name = "userName") String userName, @RequestParam(name = "password") String password){
+    public Result<Boolean> doLogin(HttpServletRequest request, HttpServletResponse response, @RequestParam(name = "userName") String userName, @RequestParam(name = "password") String password){
         logger.info("进入doLogin");
         password = RSAUtil.decrypt(password,RSAUtil.PRIVATE_KEY);
         logger.info("表单密码解密后的结果：" + password);
@@ -60,6 +74,13 @@ public class LoginController {
             return Result.error(new CodeMsg(10003,e.getMessage()));
         }
         if (subject.isAuthenticated()) {
+            UserDO user = (UserDO)subject.getSession().getAttribute("userSession");
+            userCookieUtil.addCookie(response,user,"");
+            String ip = IPUtil.getIP(request);
+            logger.info("IP:" + ip);
+            redisService.set(IPKeyPerfix.ipKeyPerfix,user.getName(),ip);
+            String outIp = redisService.get(IPKeyPerfix.ipKeyPerfix,user.getName(),String.class);
+            logger.info("redis IP ： " + outIp);
             logger.info("登录成功");
         }
         return Result.success(true);
@@ -67,9 +88,9 @@ public class LoginController {
 
     // 前往首页
     @RequestMapping("/toIndex")
-    public String toIndex(Model model){
-        UserDO user = (UserDO)SecurityUtils.getSubject().getSession().getAttribute("userSession");
-        model.addAttribute("u",user);
+    public String toIndex(Model model,UserDO userDO){
+        logger.info("首页user：" + userDO.toString());
+        model.addAttribute("u",userDO);
         logger.info("toLogin方法：前往首页");
         return "demo/index";
     }
@@ -88,5 +109,6 @@ public class LoginController {
     public String getPublicKey() {
         return RSAUtil.PUBLIC_KEY;
     }
+
 
 }
