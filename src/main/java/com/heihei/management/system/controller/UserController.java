@@ -56,6 +56,8 @@ public class UserController {
     RoleService roleService;
     @Autowired
     PostService postService;
+    @Autowired
+    ThymeleafViewResolver thymleafViewResolver;
     Logger logger = LoggerFactory.getLogger(UserController.class);
 
     @RequestMapping(value = "/toUserManagement")
@@ -70,6 +72,19 @@ public class UserController {
         model.addAttribute("u",user);
         return "demo/userManagement";
     }
+
+//    @RequestMapping(value = "/toUserManagement",produces = "text/html")
+//    public String toUserManagement(Model model,UserDO user){
+//        logger.info("进入toUserManagement方法");
+//        List<UserListVO> userList = userService.listUser();
+//        List<RoleDO> roles = roleService.selectRoles();
+//        List<DepartmentDO> depts = departmentService.listDept();
+//        model.addAttribute("users",userList);
+//        model.addAttribute("roles",roles);
+//        model.addAttribute("depts",depts);
+//        model.addAttribute("u",user);
+//        return "demo/userManagement";
+//    }
     //删除用户的请求
     @RequestMapping(value="/delete/{userId}")
     @ResponseBody

@@ -41,13 +41,12 @@ public class PersonalCenterController {
     @Autowired
     RedisService redisService;
     @RequestMapping(value = "/toPersonalCenter")
-    public String toPersonalCenter(Model model,UserDO u){
+    public String toPersonalCenter(Model model,UserDO user){
         logger.info("前往个人中心，toPersonalCenter方法");
-        UserDO user = (UserDO) SecurityUtils.getSubject().getSession().getAttribute("userSession");
         UserListVO userListVo = userService.getUserByUserId(user.getId());
         logger.info(userListVo.getUser().toString());
         model.addAttribute("uservo",userListVo);
-        model.addAttribute("u",u);
+        model.addAttribute("u",user);
         return "demo/personalCenter";
     }
 
@@ -68,16 +67,14 @@ public class PersonalCenterController {
         if (result == false){
             return Result.error(CodeMsg.UPDATEUSER_ERROR);
         }
-        //SecurityUtils.getSubject().getSession().setAttribute("userSession",user);
         flushUser(request,user);
         return Result.success(true);
     }
     // /user/updatePassword 修改用户的密码，在缓存中获取用户的信息，并且判断密码是否正确，更新缓存
     @RequestMapping(value = "/alterPwd")
     @ResponseBody
-    public Result<Boolean> alterPwd(HttpServletRequest request,@RequestParam String oldPassword,@RequestParam String  newPassword,UserDO userDO) {
+    public Result<Boolean> alterPwd(HttpServletRequest request,@RequestParam String oldPassword,@RequestParam String  newPassword,UserDO user) {
         logger.info("修改密码...");
-        UserDO user = (UserDO)SecurityUtils.getSubject().getSession().getAttribute("userSession");
         logger.info(user.toString());
         //对输入的旧密码进行解密
         String inputOldPasswordEn = RSAUtil.decrypt(oldPassword,RSAUtil.PRIVATE_KEY);
@@ -94,7 +91,6 @@ public class PersonalCenterController {
             return Result.error(CodeMsg.UPDATEPASSWORD_ERROR);
         }
         user.setPassword(newPassword);
-        //SecurityUtils.getSubject().getSession().setAttribute("userSession", user);   //更新缓存
         flushUser(request,user);
         return Result.success(true);
     }

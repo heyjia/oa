@@ -6,6 +6,7 @@ import com.heihei.management.system.redis.RedisService;
 import com.heihei.management.system.redis.UserKeyPerfix;
 import com.heihei.management.system.result.CodeMsg;
 import com.heihei.management.system.result.Result;
+import com.heihei.management.system.service.UserService;
 import com.heihei.management.system.util.IPUtil;
 import com.heihei.management.system.util.RSAUtil;
 import com.heihei.management.system.util.UserCookieUtil;
@@ -42,6 +43,8 @@ public class LoginController {
     UserCookieUtil userCookieUtil;
     @Autowired
     RedisService redisService;
+    @Autowired
+    UserService userService;
     Logger logger = LoggerFactory.getLogger(LoginController.class);
     // 拦截用户请求，跳转到登录页面
     @RequestMapping("/test")
@@ -74,7 +77,7 @@ public class LoginController {
             return Result.error(new CodeMsg(10003,e.getMessage()));
         }
         if (subject.isAuthenticated()) {
-            UserDO user = (UserDO)subject.getSession().getAttribute("userSession");
+            UserDO user = userService.getOnlyUserByUserName(userName);
             userCookieUtil.addCookie(response,user,"");
             String ip = IPUtil.getIP(request);
             logger.info("IP:" + ip);

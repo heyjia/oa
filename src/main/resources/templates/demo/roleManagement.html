@@ -267,7 +267,11 @@
                         layer.alert("添加成功",function () {
                             window.location.href = "/role/toRole";
                         });
-                    }else{
+                    }if(data.code == 99999) {
+                        layer.alert(data.msg,function () {
+                            window.location.href = "/login/toLogin";
+                        });
+                    } else{
                         layer.alert(data.msg);
                     }
                 },
@@ -289,7 +293,10 @@
                             layer.alert("删除成功",function () {
                                 window.location.href = "/role/toRole";
                             });
-
+                        }if(data.code == 99999) {
+                            layer.alert(data.msg,function () {
+                                window.location.href = "/login/toLogin";
+                            });
                         }else{
                             layer.alert(data.msg);
                         }
@@ -319,7 +326,11 @@
                     if (data.code == 0) {
                         layer.alert("修改成功",function () {
                             window.location.href = "/role/toRole";
-                        })
+                        });
+                    }if(data.code == 99999) {
+                        layer.alert(data.msg,function () {
+                            window.location.href = "/login/toLogin";
+                        });
                     }else{
                         layer.alert(data.msg);
                     }
@@ -334,6 +345,12 @@
                 url: "/role/selectRoleByRoleId/" + roleId,
                 type: "GET",
                 success: function (data) {
+                    if(data.code == 99999) {
+                        layer.alert(data.msg,function () {
+                            window.location.href = "/login/toLogin";
+                        });
+                        return;
+                    }
                     $("#alertRoleName").val(data.role.name);
                     $("#hiddenRoleId").val(data.role.id);
                     var alertPrvgValue = [];
@@ -435,6 +452,10 @@
                                 layer.alert("批量删除成功",function () {
                                     window.location.href = "/role/toRole";
                                 });
+                            }if(data.code == 99999) {
+                                layer.alert(data.msg,function () {
+                                    window.location.href = "/login/toLogin";
+                                });
                             }else{
                                 layer.alert(data.msg);
                             }
@@ -483,6 +504,10 @@
                         if (data.code == 0) {
                             layer.alert("批量导入成功,共添加" + data.data.addCount + "条，共更新" + data.data.updateCount + "条",function () {
                                 window.location.href = "/role/toRole";
+                            });
+                        }if(data.code == 99999) {
+                            layer.alert(data.msg,function () {
+                                window.location.href = "/login/toLogin";
                             });
                         }else {
                             layer.alert(data.msg);

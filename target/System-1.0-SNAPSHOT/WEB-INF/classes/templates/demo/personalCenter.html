@@ -276,6 +276,10 @@
                             layer.alert("更新成功",function () {
                                 window.location.href = "/personal/toPersonalCenter";
                             });
+                        }if(data.code == 99999) {
+                            layer.alert(data.msg,function () {
+                                window.location.href = "/login/toLogin";
+                            });
                         }else{
                             layer.alert(data.msg);
                         }
@@ -307,6 +311,10 @@
                     if (data.code == 0) {
                         layer.alert("修改密码成功",function () {
                             window.location.href = "/personal/toPersonalCenter";
+                        });
+                    }if(data.code == 99999) {
+                        layer.alert(data.msg,function () {
+                            window.location.href = "/login/toLogin";
                         });
                     }else{
                         layer.alert(data.msg);

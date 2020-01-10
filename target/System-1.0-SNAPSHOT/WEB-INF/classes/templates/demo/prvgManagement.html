@@ -46,8 +46,10 @@
                     </div>
 
                     <div class="col-li-2 col-md-4">
-                        <button type="button" class="btn btn-primary adduser" onclick="showAddPrvgMadal()">添加</button>
-                        <button type="button" class="btn btn-primary adduser" onclick="BatchDelPrvg()">批量删除</button>
+                        <button type="button" class="btn btn-primary" onclick="showAddPrvgMadal()">添加</button>
+                        <button type="button" class="btn btn-primary" onclick="BatchDelPrvg()">批量删除</button>
+                        <button type="button" class="btn btn-primary" onclick="showImportPrvg()">批量导入</button>
+                        <button type="button" class="btn btn-primary" onclick="exportPrvg()">导出</button>
                     </div>
                 </div>
                 <!-- 表格显示区域 -->
@@ -140,6 +142,32 @@
                     </div>
                 </div>
 
+                <!--批量导入模态框-->
+                <div id = "importPrvgModal" name = "importPrvgModal" class="modal-bg  dp-n">
+                    <div class="modal-conbox">
+                        <div class="modal-t">
+                            <span class="control-label">批量导入</span>
+                        </div>
+                        <form role="form" class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">文件</label>
+                                <div class="col-sm-9">
+                                <input id="importPrvgData" name="importPrvgData" type="file">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-10 control-label" style="color: red">请选择.xsl格式格式的文件 <a href="/prvg/downModal">下载模板</a></label>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-4">
+                                    <button id = "importPrvgBtn" name = "importPrvgBtn" type="button" class="btn btn-default" onclick="importPrvg()">导入</button>
+                                    <button type="button" class="btn btn-default" onclick="toBackPrvgList()">返回</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
@@ -213,6 +241,7 @@
         function toBackPrvgList() {
             $("#addPrvgModal").addClass("dp-n");
             $("#alertPrvgModal").addClass("dp-n");
+            $("#importPrvgModal").addClass("dp-n");
         }
         function showAddPrvgMadal() {
             $("#addPrvgModal").removeClass("dp-n");
@@ -232,6 +261,10 @@
                     if (data.code == 0) {
                         layer.alert("添加成功",function () {
                             window.location.href = "/prvg/toPrvg";
+                        });
+                    }if(data.code == 99999) {
+                        layer.alert(data.msg,function () {
+                            window.location.href = "/login/toLogin";
                         });
                     }else{
                         layer.alert(data.msg);
@@ -256,6 +289,10 @@
                                 window.location.href = "/prvg/toPrvg";
                             });
 
+                        }if(data.code == 99999) {
+                            layer.alert(data.msg,function () {
+                                window.location.href = "/login/toLogin";
+                            });
                         }else{
                             layer.alert(data.msg);
                         }
@@ -285,6 +322,10 @@
                         layer.alert("修改成功",function () {
                             window.location.href = "/prvg/toPrvg";
                         })
+                    }if(data.code == 99999) {
+                        layer.alert(data.msg,function () {
+                            window.location.href = "/login/toLogin";
+                        });
                     }else{
                         layer.alert(data.msg);
                     }
@@ -299,6 +340,12 @@
                 url: "/prvg/selectPrvgByPrvgId/" + prvgId,
                 type: "GET",
                 success: function (data) {
+                    if(data.code == 99999) {
+                        layer.alert(data.msg,function () {
+                            window.location.href = "/login/toLogin";
+                        });
+                        return;
+                    }
                     $("#hiddenPrvgId").val(data.id);
                     $("#alertPrvgName").val(data.name);
                     $("#alertUrl").val(data.url);
@@ -417,6 +464,10 @@
                                 layer.alert("批量删除成功",function () {
                                     window.location.href = "/prvg/toPrvg";
                                 });
+                            }if(data.code == 99999) {
+                                layer.alert(data.msg,function () {
+                                    window.location.href = "/login/toLogin";
+                                });
                             }else{
                                 layer.alert(data.msg);
                             }
@@ -427,6 +478,55 @@
                     });
                 }, function(index){
                     layer.close(index);
+                });
+            }
+            function exportPrvg() {
+                window.location.href = "/prvg/download"
+            }
+            function showImportPrvg() {
+                $("#importPrvgModal").removeClass("dp-n");
+            }
+            function importPrvg() {
+                var files = $('input[name="importPrvgData"]').prop('files');//获取到文件列表
+                if (files.length == 0) {
+                    layer.alert('请选择文件');
+                    return;
+                } else {
+                    var formData = new FormData();
+                    var name = $("#importPrvgData").val();
+                    formData.append("file", $("#importPrvgData")[0].files[0]);
+                    formData.append("name", name);
+                    var reg = /^.*\.(?:xls|xlsx)$/i;
+                    if (!reg.test(name)) {//校验是否是excel格式的文件
+                        layer.alert("请上传excel格式的文件!");
+                        return;
+                    }
+                }
+                $.ajax({
+                    type : "post",
+                    async : false,
+                    traditional : true,
+                    url :  "/prvg/importData",
+                    dataType : "json",
+                    data : formData,
+                    processData : false,
+                    contentType : false,
+                    success : function (data) {
+                        if (data.code == 0) {
+                            layer.alert("批量导入成功,共添加" + data.data.addCount + "条，共更新" + data.data.updateCount + "条",function () {
+                                window.location.href = "/prvg/toPrvg";
+                            });
+                        }if(data.code == 99999) {
+                            layer.alert(data.msg,function () {
+                                window.location.href = "/login/toLogin";
+                            });
+                        }else {
+                            layer.alert(data.msg);
+                        }
+                    },
+                    error : function () {
+                        alert("导入失败");
+                    }
                 });
             }
     </script>

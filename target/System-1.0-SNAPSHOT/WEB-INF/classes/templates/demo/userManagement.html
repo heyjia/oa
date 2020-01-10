@@ -49,8 +49,9 @@
                         </div>
 
                         <div class="col-li-2 col-md-4">
-                            <button type="button" class="btn btn-primary adduser" onclick="addfun()">添加</button>
-                            <button type="button" class="btn btn-primary adduser" onclick="BatchDel()">批量删除</button>
+                            <button type="button" class="btn btn-primary" onclick="addfun()">添加</button>
+                            <button type="button" class="btn btn-primary" onclick="BatchDel()">批量删除</button>
+                            <button type="button" class="btn btn-primary" onclick="exportUser()">导出</button>
                         </div>
                     </div>
                     <!-- 表格显示区域 -->
@@ -402,6 +403,12 @@
                     type: 'post',
                     data: {deptId:deptId},
                     success: function (data) {
+                        if(data.code == 99999) {
+                            layer.alert(data.msg,function () {
+                                window.location.href = "/login/toLogin";
+                            });
+                            return;
+                        }
                         var t2 = $("#selectPost").empty();
                         for (var i = 0; i < data.length; i++) {
                             t2.append("<option value='" + data[i].id + "'>" + data[i].name + "</option>");
@@ -420,6 +427,12 @@
                     type: 'post',
                     data: {deptId:deptId},
                     success: function (data) {
+                        if(data.code == 99999) {
+                            layer.alert(data.msg,function () {
+                                window.location.href = "/login/toLogin";
+                            });
+                            return;
+                        }
                         var t2 = $("#newPost").empty();
                         for (var i = 0; i < data.length; i++) {
                             t2.append("<option value='" + data[i].id + "'>" + data[i].name + "</option>");
@@ -496,6 +509,11 @@
                             layer.alert("删除成功",function () {
                                 window.location.href = "/user/toUserManagement";
                             });
+                        }
+                        if(data.code == 99999) {
+                            layer.alert(data.msg,function () {
+                                window.location.href = "/login/toLogin";
+                            });
                         }else{
                             layer.alert(data.msg);
                         }
@@ -525,6 +543,12 @@
                 url: "/user/selectUserByUserId/" + userId,
                 type: "GET",
                 success: function (data) {
+                    if(data.code == 99999) {
+                        layer.alert(data.msg,function () {
+                            window.location.href = "/login/toLogin";
+                        });
+                        return;
+                    }
                     $("#alertUserName").val(data.user.name);
                     $("#newEmail").val(data.user.email);
                     $("#newTelephone").val(data.user.telephone);
@@ -549,6 +573,12 @@
                                     type: 'post',
                                     data: {deptId:deptId},
                                     success: function (data) {
+                                        if(data.code == 99999) {
+                                            layer.alert(data.msg,function () {
+                                                window.location.href = "/login/toLogin";
+                                            });
+                                            return;
+                                        }
                                         var t2 = $("#newPost").empty();
                                 for (var i = 0; i < data.length; i++) {
                                     t2.append("<option value='" + data[i].id + "'>" + data[i].name + "</option>");
@@ -607,6 +637,10 @@
                         layer.alert("更新成功",function () {
                             window.location.href = "/user/toUserManagement";
                         });
+                    }if(data.code == 99999) {
+                        layer.alert(data.msg,function () {
+                            window.location.href = "/login/toLogin";
+                        });
                     }else{
                         layer.alert(data.msg);
                     }
@@ -658,6 +692,11 @@
                         layer.alert("添加成功",function () {
                             window.location.href = "/user/toUserManagement";
                         });
+                    }
+                    if(data.code == 99999) {
+                        layer.alert(data.msg,function () {
+                            window.location.href = "/login/toLogin";
+                        });
                     }else{
                         layer.alert(data.msg);
                     }
@@ -690,6 +729,11 @@
                             layer.alert("批量删除成功",function () {
                                 window.location.href = "/user/toUserManagement";
                             });
+                        }
+                        if(data.code == 99999) {
+                            layer.alert(data.msg,function () {
+                                window.location.href = "/login/toLogin";
+                            });
                         }else{
                             layer.alert(data.msg);
                         }
@@ -702,6 +746,9 @@
                 layer.close(index);
             });
 
+        }
+        function exportUser() {
+            window.location.href="/user/download";
         }
     </script>
 </body>

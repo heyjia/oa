@@ -295,6 +295,12 @@
                 type: "POST",
                 data: {},
                 success: function (data) {
+                    if(data.code == 99999) {
+                        layer.alert(data.msg,function () {
+                            window.location.href = "/login/toLogin";
+                        });
+                        return;
+                    }
                     for (var i = 0;i < data.length; i++) {
                         zNodes.push({
                                         id: data[i].id,
@@ -348,6 +354,10 @@
                             layer.alert("删除成功",function () {
                                 window.location.href = "/dept/toDeptTree";
                             });
+                        }if(data.code == 99999) {
+                            layer.alert(data.msg,function () {
+                                window.location.href = "/login/toLogin";
+                            });
                         }else{
                             layer.alert(data.msg);
                         }
@@ -395,6 +405,10 @@
                             window.location.href="/dept/toDeptTree";
                         });
 
+                    }if(data.code == 99999) {
+                        layer.alert(data.msg,function () {
+                            window.location.href = "/login/toLogin";
+                        });
                     }else{
                         layer.alert(""+data.msg);
                     }
@@ -409,6 +423,12 @@
                 url: "/dept/selectDeptByDeptId/" + deptId,
                 type: "GET",
                 success: function (data) {
+                    if(data.code == 99999) {
+                        layer.alert(data.msg,function () {
+                            window.location.href = "/login/toLogin";
+                        });
+                        return;
+                    }
                     $("#alertDeptName").val(data.dept.name);
                     $("#alertAddress").val(data.dept.address);
                     $("#alertDescribe").val(data.dept.describe);
@@ -451,6 +471,10 @@
                     if (data.code == 0) {
                         layer.alert("更新成功",function(){
                             window.location.href="/dept/toDeptTree";
+                        });
+                    }if(data.code == 99999) {
+                        layer.alert(data.msg,function () {
+                            window.location.href = "/login/toLogin";
                         });
                     }else{
                         layer.alert(""+data.msg);
@@ -549,6 +573,10 @@
                             layer.alert("批量删除成功",function () {
                                 window.location.href = "/dept/toDeptTree";
                             });
+                        }if(data.code == 99999) {
+                            layer.alert(data.msg,function () {
+                                window.location.href = "/login/toLogin";
+                            });
                         }else{
                             layer.alert(data.msg);
                         }
@@ -597,6 +625,10 @@
                     if (data.code == 0) {
                         layer.alert("批量导入成功,共添加" + data.data.addCount + "条，共更新" + data.data.updateCount + "条",function () {
                             window.location.href = "/dept/toDeptTree";
+                        });
+                    }if(data.code == 99999) {
+                        layer.alert(data.msg,function () {
+                            window.location.href = "/login/toLogin";
                         });
                     }else {
                         layer.alert(data.msg);

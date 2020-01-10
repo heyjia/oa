@@ -87,8 +87,8 @@ public class MyShiroRealm extends AuthorizingRealm {
         String password = RSAUtil.decrypt(userDO.getPassword(),RSAUtil.PRIVATE_KEY);
         logger.info("数据库密码解密的结果" + password);
         SimpleAuthenticationInfo simpleAuthenticationInfo = new SimpleAuthenticationInfo(inputUserName, password,getName());
-        Session session = SecurityUtils.getSubject().getSession();
-        session.setAttribute("userSession", userDO);
+//        Session session = SecurityUtils.getSubject().getSession();
+//        session.setAttribute("userSession", userDO);
         return simpleAuthenticationInfo;
     }
 }
