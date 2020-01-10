@@ -11,8 +11,8 @@
     <property name="MAX_HISTORY" value="20"/>
     <property name="TOTAL_SIZECAP" value="10GB"/>
     <property name="LOG_DIR" value="logs"/>
-    <property name="DEBUG_LOG_FILE" value="${LOG_DIR}/debug/debug.log"/>
-    <property name="ALL_LOG_FILE" value="${LOG_DIR}/debug/all.log"/>
+    <property name="DEBUG_LOG_FILE" value="${LOG_DIR}/debug.log"/>
+    <property name="ALL_LOG_FILE" value="${LOG_DIR}/all.log"/>
 
     <!--console-->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
